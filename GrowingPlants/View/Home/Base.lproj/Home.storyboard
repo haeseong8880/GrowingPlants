@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -126,20 +127,47 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocj-Hm-j74">
+                                <rect key="frame" x="329" y="762" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="8JX-tI-KLQ"/>
+                                    <constraint firstAttribute="height" constant="60" id="De7-zZ-TnR"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule">
+                                    <imageReference key="image" image="plus" catalog="system" symbolScale="default" renderingMode="template"/>
+                                    <color key="baseForegroundColor" systemColor="systemIndigoColor"/>
+                                    <color key="baseBackgroundColor" red="0.43137254901960786" green="0.80784313725490198" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="registerButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9yE-ur-7sH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.88235294117647056" green="0.94509803921568625" blue="0.90588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Ga0-RD-eMw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="39g-cK-Gta"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ocj-Hm-j74" secondAttribute="bottom" constant="40" id="3gv-r6-IAc"/>
+                            <constraint firstItem="ocj-Hm-j74" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-25" id="EDc-XT-S2T"/>
                             <constraint firstItem="Ga0-RD-eMw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Kht-fJ-hX8"/>
                             <constraint firstItem="Ga0-RD-eMw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SWK-nQ-ccW"/>
                             <constraint firstItem="Ga0-RD-eMw" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="Yuj-YQ-kd0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="registerButton" destination="ocj-Hm-j74" id="cZI-SV-dOw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-7.2463768115942031" y="75.669642857142847"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
