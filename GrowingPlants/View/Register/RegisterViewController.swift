@@ -11,6 +11,7 @@ class RegisterViewController: UIViewController {
     
     @IBOutlet weak var plantImage: UIImageView!
     @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var imageBackgroundView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,7 @@ class RegisterViewController: UIViewController {
     
     private func imageConfigure() {
         plantImage.layer.cornerRadius = 10
+        imageBackgroundView.layer.cornerRadius = 10
     }
     
     @IBAction func cameraTapped(_ sender: Any) {
@@ -79,6 +81,7 @@ extension RegisterViewController: UIImagePickerControllerDelegate & UINavigation
         }
         plantImage.isHidden = false
         cameraButton.isHidden = true
+        imageBackgroundView.backgroundColor = nil
         picker.dismiss(animated: true, completion: nil)
     }
     
