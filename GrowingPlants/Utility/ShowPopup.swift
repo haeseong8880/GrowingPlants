@@ -17,4 +17,16 @@ class ShowPopup {
         alert.addAction(okAction)
         return alert
     }
+    
+    func confirm(title: String) -> UIAlertController {
+        let alert = UIAlertController(title: nil, message: title, preferredStyle: .alert)
+        
+        let yesAction = UIAlertAction(title: "네", style: .default) { _ in
+           // 액션 설정
+        }
+        alert.addAction(yesAction)
+        let noAction = UIAlertAction(title: "아니오", style: .cancel) { _ in }
+        alert.addAction(noAction)
+        return alert
+    }
 }

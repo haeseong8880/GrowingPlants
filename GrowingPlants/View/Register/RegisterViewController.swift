@@ -94,13 +94,23 @@ class RegisterViewController: UIViewController {
     
     // 등록 버튼 누름
     @IBAction func plantRegisterTapped(_ sender: Any) {
-        if !plantNameTextField.text!.isEmpty && plantImage.image != nil && !weekList.isEmpty {
-            weekList.forEach { item in
-                localNotificaitionSetting(item)
+        let alert = UIAlertController(title: nil, message: "반려 식물 물 주기를 등록하시겠습니까?", preferredStyle: .alert)
+        
+        let yesAction = UIAlertAction(title: "네", style: .default) { [weak self] _ in
+            guard let self = self else { return }
+            if !self.plantNameTextField.text!.isEmpty && self.plantImage.image != nil && !self.weekList.isEmpty {
+                self.weekList.forEach { item in
+                    self.localNotificaitionSetting(item)
+                }
+                self.dismiss(animated: true)
+            } else {
+                self.present(ShowPopup.shared.alert(title: "알림", message: "반려 식물 이름, 사진, 물 주기를 입력해주세요."), animated: true, completion: nil)
             }
-        } else {
-            present(ShowPopup.shared.alert(title: "알림", message: "반려 식물 이름, 사진, 물 주기를 입력해주세요."), animated: true, completion: nil)
         }
+        alert.addAction(yesAction)
+        let noAction = UIAlertAction(title: "아니오", style: .cancel) { _ in }
+        alert.addAction(noAction)
+        present(alert, animated: true)
     }
     
     // 키보드 닫음

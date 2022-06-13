@@ -187,17 +187,26 @@
                                     <action selector="plantRegisterTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ZED-da-SX7"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plant" translatesAutoresizingMaskIntoConstraints="NO" id="cGa-Re-Rr5">
+                                <rect key="frame" x="314" y="762" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="BGF-8t-k5x"/>
+                                    <constraint firstAttribute="width" constant="100" id="uYB-ou-6PG"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.88235294117647056" green="0.94509803921568625" blue="0.90588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="WzK-RI-c0s" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="8aq-aV-vfQ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="cGa-Re-Rr5" secondAttribute="trailing" id="Bjz-ev-pS3"/>
                             <constraint firstItem="KzH-Ze-swx" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="IUz-lD-ZLZ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="WfU-Eg-PYF" secondAttribute="trailing" id="Rz7-ln-hR7"/>
                             <constraint firstItem="Pt1-14-mph" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="TzD-s0-qRW"/>
                             <constraint firstItem="KzH-Ze-swx" firstAttribute="top" secondItem="WfU-Eg-PYF" secondAttribute="bottom" constant="20" id="bEA-IF-VdV"/>
                             <constraint firstItem="WzK-RI-c0s" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" constant="-10" id="bgy-md-CPV"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="KzH-Ze-swx" secondAttribute="trailing" constant="10" id="fyX-cJ-PjD"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="cGa-Re-Rr5" secondAttribute="bottom" id="gTy-S2-0bW"/>
                             <constraint firstItem="WfU-Eg-PYF" firstAttribute="top" secondItem="WzK-RI-c0s" secondAttribute="bottom" constant="30" id="p1Z-0i-xBl"/>
                             <constraint firstItem="WfU-Eg-PYF" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="v0Q-kl-B46"/>
                             <constraint firstItem="WzK-RI-c0s" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="40" id="vRc-jb-j4T"/>
@@ -225,5 +234,6 @@
     </scenes>
     <resources>
         <image name="camera.viewfinder" catalog="system" width="128" height="115"/>
+        <image name="plant" width="64" height="64"/>
     </resources>
 </document>
