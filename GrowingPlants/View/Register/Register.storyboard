@@ -85,10 +85,10 @@
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2i-6E-HCj">
                                         <rect key="frame" x="0.0" y="0.0" width="52" height="50"/>
+                                        <color key="tintColor" red="0.77647058820000003" green="0.82352941180000006" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="일">
                                             <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="baseBackgroundColor" red="0.77647058823529413" green="0.82352941176470584" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="weekTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="xWS-P3-KIY"/>
@@ -96,10 +96,10 @@
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m95-Bi-MDY">
                                         <rect key="frame" x="57" y="0.0" width="52" height="50"/>
+                                        <color key="tintColor" red="0.77647058820000003" green="0.82352941180000006" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="월">
                                             <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="baseBackgroundColor" red="0.77647058820000003" green="0.82352941180000006" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="weekTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="mLf-ZF-8pe"/>
@@ -107,10 +107,10 @@
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5Q-92-da3">
                                         <rect key="frame" x="114" y="0.0" width="52" height="50"/>
+                                        <color key="tintColor" red="0.77647058820000003" green="0.82352941180000006" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="화">
                                             <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="baseBackgroundColor" red="0.77647058820000003" green="0.82352941180000006" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="weekTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="4SV-Of-dre"/>
@@ -118,10 +118,10 @@
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kqb-YE-fmd">
                                         <rect key="frame" x="171" y="0.0" width="52" height="50"/>
+                                        <color key="tintColor" red="0.77647058820000003" green="0.82352941180000006" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="수">
                                             <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="baseBackgroundColor" red="0.77647058820000003" green="0.82352941180000006" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="weekTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="rVt-Q4-fQC"/>
@@ -129,10 +129,10 @@
                                     </button>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NCz-AD-VIy">
                                         <rect key="frame" x="228" y="0.0" width="52" height="50"/>
+                                        <color key="tintColor" red="0.77647058820000003" green="0.82352941180000006" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="목">
                                             <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="baseBackgroundColor" red="0.77647058820000003" green="0.82352941180000006" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="weekTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="acN-lg-RL5"/>
@@ -140,10 +140,10 @@
                                     </button>
                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJG-d9-Om7">
                                         <rect key="frame" x="285" y="0.0" width="52" height="50"/>
+                                        <color key="tintColor" red="0.77647058820000003" green="0.82352941180000006" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="금">
                                             <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="baseBackgroundColor" red="0.77647058820000003" green="0.82352941180000006" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="weekTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="bY0-2y-bUF"/>
@@ -151,10 +151,10 @@
                                     </button>
                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLp-rK-oo2">
                                         <rect key="frame" x="342" y="0.0" width="52" height="50"/>
+                                        <color key="tintColor" red="0.77647058820000003" green="0.82352941180000006" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="토">
                                             <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="baseBackgroundColor" red="0.77647058820000003" green="0.82352941180000006" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="weekTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="PDQ-55-pt2"/>
@@ -177,6 +177,9 @@
                                     <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="baseBackgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="plantRegisterTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ZED-da-SX7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -200,6 +203,13 @@
                         <outlet property="imageBackgroundView" destination="B8y-E1-cf7" id="a5e-ko-7Sq"/>
                         <outlet property="plantImage" destination="XLj-vj-w8Q" id="p8K-bk-XNL"/>
                         <outlet property="plantNameTextField" destination="Eii-Zx-Ed6" id="QCH-ja-oSB"/>
+                        <outletCollection property="weekSelectButtons" destination="x2i-6E-HCj" collectionClass="NSMutableArray" id="c44-W9-D9d"/>
+                        <outletCollection property="weekSelectButtons" destination="m95-Bi-MDY" collectionClass="NSMutableArray" id="6fo-WG-gYw"/>
+                        <outletCollection property="weekSelectButtons" destination="g5Q-92-da3" collectionClass="NSMutableArray" id="EXU-C7-pL8"/>
+                        <outletCollection property="weekSelectButtons" destination="Kqb-YE-fmd" collectionClass="NSMutableArray" id="GFv-eX-MAD"/>
+                        <outletCollection property="weekSelectButtons" destination="NCz-AD-VIy" collectionClass="NSMutableArray" id="xER-Vx-lC8"/>
+                        <outletCollection property="weekSelectButtons" destination="TJG-d9-Om7" collectionClass="NSMutableArray" id="mLg-al-91X"/>
+                        <outletCollection property="weekSelectButtons" destination="CLp-rK-oo2" collectionClass="NSMutableArray" id="8Ur-h7-KLD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
