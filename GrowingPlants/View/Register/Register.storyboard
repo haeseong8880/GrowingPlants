@@ -199,6 +199,7 @@
                         <outlet property="cameraButton" destination="8Uf-VK-44T" id="fWv-M5-fGF"/>
                         <outlet property="imageBackgroundView" destination="B8y-E1-cf7" id="a5e-ko-7Sq"/>
                         <outlet property="plantImage" destination="XLj-vj-w8Q" id="p8K-bk-XNL"/>
+                        <outlet property="plantNameTextField" destination="Eii-Zx-Ed6" id="QCH-ja-oSB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

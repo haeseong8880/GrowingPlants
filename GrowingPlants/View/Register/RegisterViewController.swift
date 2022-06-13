@@ -9,9 +9,12 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
+    private var weekList: [Int] = []
+    
     @IBOutlet weak var plantImage: UIImageView!
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var imageBackgroundView: UIView!
+    @IBOutlet weak var plantNameTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,11 +38,11 @@ class RegisterViewController: UIViewController {
     
     // 주기 선택 버튼 클릭!
     @IBAction func weekTapped(_ sender: UIButton) {
-        print("click!!!!")
         // 푸시에 표시 될 컨텐츠
+        guard let todayWeek = sender.titleLabel?.text else { return }
         let content = UNMutableNotificationContent()
-        content.title = "반려 식물 물 주기!"
-        content.body = "지금은 오후 12시!!!!"
+        content.title = "반려 식물에게 물을 주는 날입니다!"
+        content.body = "오늘은 \(todayWeek)요일 입니다."
         
         // 푸시 일정 주기
         var dateComponents = DateComponents()
@@ -47,6 +50,7 @@ class RegisterViewController: UIViewController {
 
         dateComponents.weekday = sender.tag
         dateComponents.hour = 12
+//        dateComponents.minute = 49
            
         // 트리거 생성
         let trigger = UNCalendarNotificationTrigger(
@@ -56,7 +60,6 @@ class RegisterViewController: UIViewController {
         let uuidString = UUID().uuidString
         let request = UNNotificationRequest(identifier: uuidString,
                     content: content, trigger: trigger)
-
         // Schedule the request with the system.
         let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.add(request) { (error) in
