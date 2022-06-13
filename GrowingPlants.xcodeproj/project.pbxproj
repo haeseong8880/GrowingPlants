@@ -22,6 +22,7 @@
 		31E964A728570CDC008D2C52 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 31E964A628570CDC008D2C52 /* RealmSwift */; };
 		31E964AB28570D5E008D2C52 /* PlantsRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E964AA28570D5E008D2C52 /* PlantsRealm.swift */; };
 		31E964B32857167B008D2C52 /* Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E964B22857167B008D2C52 /* Week.swift */; };
+		31E964B528572D9B008D2C52 /* ShowPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E964B428572D9B008D2C52 /* ShowPopup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		31E964A12855B6FA008D2C52 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		31E964AA28570D5E008D2C52 /* PlantsRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsRealm.swift; sourceTree = "<group>"; };
 		31E964B22857167B008D2C52 /* Week.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Week.swift; sourceTree = "<group>"; };
+		31E964B428572D9B008D2C52 /* ShowPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPopup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 		31E964AC28570F3D008D2C52 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				31E964B428572D9B008D2C52 /* ShowPopup.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31E964B528572D9B008D2C52 /* ShowPopup.swift in Sources */,
 				31E9642928508488008D2C52 /* AppDelegate.swift in Sources */,
 				31E9642B28508488008D2C52 /* SceneDelegate.swift in Sources */,
 				31E964AB28570D5E008D2C52 /* PlantsRealm.swift in Sources */,

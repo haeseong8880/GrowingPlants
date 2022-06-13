@@ -45,7 +45,7 @@ class RegisterViewController: UIViewController {
         weekSelectButtons.forEach { item in
             if item.tag == sender.tag {
                 if item.tintColor == #colorLiteral(red: 0.7764705882, green: 0.8235294118, blue: 0.7450980392, alpha: 1) {
-                    item.tintColor = .red
+                    item.tintColor = #colorLiteral(red: 0.8941176471, green: 0.6588235294, blue: 0.7019607843, alpha: 1)
                     guard let weekName = sender.titleLabel?.text else { return }
                     weekList.append(Week(tagNumber: sender.tag, weekName: weekName))
                 } else {
@@ -58,7 +58,6 @@ class RegisterViewController: UIViewController {
                 }
             }
         }
-        print("weekList check ====>    \(weekList)")
     }
     
     // Local Notificaion Setting
@@ -95,8 +94,12 @@ class RegisterViewController: UIViewController {
     
     // 등록 버튼 누름
     @IBAction func plantRegisterTapped(_ sender: Any) {
-        weekList.forEach { item in
-            localNotificaitionSetting(item)
+        if !plantNameTextField.text!.isEmpty && plantImage.image != nil && !weekList.isEmpty {
+            weekList.forEach { item in
+                localNotificaitionSetting(item)
+            }
+        } else {
+            present(ShowPopup.shared.alert(title: "알림", message: "반려 식물 이름, 사진, 물 주기를 입력해주세요."), animated: true, completion: nil)
         }
     }
     
