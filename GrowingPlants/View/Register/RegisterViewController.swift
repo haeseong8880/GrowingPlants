@@ -23,6 +23,27 @@ class RegisterViewController: UIViewController {
         weekSelectButtons.forEach { item in
             item.tintColor = #colorLiteral(red: 0.7764705882, green: 0.8235294118, blue: 0.7450980392, alpha: 1)
         }
+        imageClick()
+    }
+    
+    private func imageClick() {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        imageBackgroundView.isUserInteractionEnabled = true
+        imageBackgroundView.addGestureRecognizer(tapGestureRecognizer)
+        
+    }
+    
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        let alert = UIAlertController(title: nil, message: "다시 촬영 하시겠습니까?", preferredStyle: .alert)
+        
+        let yesAction = UIAlertAction(title: "네", style: .default) { [weak self] _ in
+            guard let self = self else { return }
+            self.cameraEvent()
+        }
+        alert.addAction(yesAction)
+        let noAction = UIAlertAction(title: "아니오", style: .cancel) { _ in }
+        alert.addAction(noAction)
+        present(alert, animated: true)
     }
     
     private func imageConfigure() {
@@ -31,6 +52,11 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func cameraTapped(_ sender: Any) {
+        cameraEvent()
+    }
+    
+    // camera event
+    private func cameraEvent() {
         let camera = UIImagePickerController()
         camera.sourceType = .camera
         camera.allowsEditing = true
@@ -45,7 +71,7 @@ class RegisterViewController: UIViewController {
         weekSelectButtons.forEach { item in
             if item.tag == sender.tag {
                 if item.tintColor == #colorLiteral(red: 0.7764705882, green: 0.8235294118, blue: 0.7450980392, alpha: 1) {
-                    item.tintColor = #colorLiteral(red: 0.8941176471, green: 0.6588235294, blue: 0.7019607843, alpha: 1)
+                    item.tintColor = #colorLiteral(red: 0.8941176471, green: 0.7490196078, blue: 0.7019607843, alpha: 1)
                     guard let weekName = sender.titleLabel?.text else { return }
                     weekList.append(Week(tagNumber: sender.tag, weekName: weekName))
                 } else {
@@ -102,7 +128,31 @@ class RegisterViewController: UIViewController {
                 self.weekList.forEach { item in
                     self.localNotificaitionSetting(item)
                 }
-                self.dismiss(animated: true)
+                // UniqueName.jpeg
+                let uniqueFileName: String = "\(ProcessInfo.processInfo.globallyUniqueString).jpeg"
+                
+                ImageFileManager.shared.saveImage(image: self.plantImage.image!, name: uniqueFileName) { value in
+                    if value {
+                        var waterPlan = ""
+                        for (index, item) in self.weekList.enumerated() {
+                            if index == 0 {
+                                waterPlan = "\(item.tagNumber)"
+                            } else {
+                                waterPlan = "\(waterPlan),\(item.tagNumber)"
+                            }
+                        }
+                        let plantValue = PlantsEntity()
+                        plantValue.plantName = self.plantNameTextField.text!
+                        plantValue.waterPlan = waterPlan
+                        plantValue.plantImageName = uniqueFileName
+                        PlantsRealm.shared.savePlant(plant: plantValue) { value in
+                            if value {
+                                self.dismiss(animated: true)
+                            }
+                        }
+                    }
+                }
+                
             } else {
                 self.present(ShowPopup.shared.alert(title: "알림", message: "반려 식물 이름, 사진, 물 주기를 입력해주세요."), animated: true, completion: nil)
             }
@@ -117,6 +167,7 @@ class RegisterViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         self.view.endEditing(true)
     }
+    
 }
 
 // 카메라 설정
@@ -125,6 +176,7 @@ extension RegisterViewController: UIImagePickerControllerDelegate & UINavigation
         
         if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
             plantImage.image = image
+            print(info)
         }
         plantImage.isHidden = false
         cameraButton.isHidden = true
