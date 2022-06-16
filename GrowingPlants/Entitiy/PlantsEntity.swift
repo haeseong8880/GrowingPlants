@@ -19,3 +19,10 @@ class PlantsEntity: Object {
         return "id"
     }
 }
+
+struct plantHashable: Hashable {
+    let id: Int
+    let plantName: String
+    let plantImageName: String
+    let waterPlan: String
+}

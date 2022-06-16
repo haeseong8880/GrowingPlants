@@ -61,43 +61,43 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="cce-ZJ-VC9">
                                                             <rect key="frame" x="0.0" y="370" width="394" height="50"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="월" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRn-J8-cLf">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpS-P6-wuC">
                                                                     <rect key="frame" x="0.0" y="0.0" width="50.5" height="50"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="화" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8Q-tg-zkU">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="월" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRn-J8-cLf">
                                                                     <rect key="frame" x="57.5" y="0.0" width="50" height="50"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8Z-0v-eZO">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="화" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8Q-tg-zkU">
                                                                     <rect key="frame" x="114.5" y="0.0" width="50.5" height="50"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="목" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpS-hX-vEf">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y8Z-0v-eZO">
                                                                     <rect key="frame" x="172" y="0.0" width="50" height="50"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="금" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCc-Cp-ALp">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="목" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpS-hX-vEf">
                                                                     <rect key="frame" x="229" y="0.0" width="50.5" height="50"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="토" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ae-wK-ewl">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="금" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCc-Cp-ALp">
                                                                     <rect key="frame" x="286.5" y="0.0" width="50" height="50"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpS-P6-wuC">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="토" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ae-wK-ewl">
                                                                     <rect key="frame" x="343.5" y="0.0" width="50.5" height="50"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -128,13 +128,14 @@
                                             <outlet property="plantImageView" destination="smV-Qa-PkB" id="fhM-F4-jxs"/>
                                             <outlet property="plantNameLabel" destination="cx0-Gl-pNd" id="FZF-U0-LKO"/>
                                             <outlet property="watherSchedule" destination="bro-mx-zE7" id="G4K-4P-rvq"/>
-                                            <outletCollection property="watherPlanLabels" destination="dRn-J8-cLf" collectionClass="NSMutableArray" id="8zt-6Q-R5N"/>
-                                            <outletCollection property="watherPlanLabels" destination="k8Q-tg-zkU" collectionClass="NSMutableArray" id="c5C-c6-cTd"/>
-                                            <outletCollection property="watherPlanLabels" destination="y8Z-0v-eZO" collectionClass="NSMutableArray" id="RCz-R6-nK7"/>
-                                            <outletCollection property="watherPlanLabels" destination="cpS-hX-vEf" collectionClass="NSMutableArray" id="cmS-va-vx1"/>
-                                            <outletCollection property="watherPlanLabels" destination="XCc-Cp-ALp" collectionClass="NSMutableArray" id="2gk-ZN-6iW"/>
-                                            <outletCollection property="watherPlanLabels" destination="6Ae-wK-ewl" collectionClass="NSMutableArray" id="sh4-JD-W1J"/>
-                                            <outletCollection property="watherPlanLabels" destination="bpS-P6-wuC" collectionClass="NSMutableArray" id="8bK-fz-0JI"/>
+                                            <outletCollection property="watherPlanLabels" destination="bpS-P6-wuC" collectionClass="NSMutableArray" id="SQB-z5-ME9"/>
+                                            <outletCollection property="watherPlanLabels" destination="dRn-J8-cLf" collectionClass="NSMutableArray" id="BQu-E6-fjC"/>
+                                            <outletCollection property="watherPlanLabels" destination="k8Q-tg-zkU" collectionClass="NSMutableArray" id="Cth-bW-Dyn"/>
+                                            <outletCollection property="watherPlanLabels" destination="y8Z-0v-eZO" collectionClass="NSMutableArray" id="avj-dd-pWM"/>
+                                            <outletCollection property="watherPlanLabels" destination="cpS-hX-vEf" collectionClass="NSMutableArray" id="OkW-pm-Cvi"/>
+                                            <outletCollection property="watherPlanLabels" destination="cpS-hX-vEf" collectionClass="NSMutableArray" id="C5D-Ya-DZl"/>
+                                            <outletCollection property="watherPlanLabels" destination="XCc-Cp-ALp" collectionClass="NSMutableArray" id="GrD-6a-l8Q"/>
+                                            <outletCollection property="watherPlanLabels" destination="6Ae-wK-ewl" collectionClass="NSMutableArray" id="FOg-6B-StN"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

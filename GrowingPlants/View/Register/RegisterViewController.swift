@@ -9,6 +9,7 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
+    var delegate: sendDataDelegate?
     private var weekList: [Week] = []
     
     @IBOutlet weak var plantImage: UIImageView!
@@ -130,7 +131,6 @@ class RegisterViewController: UIViewController {
                 }
                 // UniqueName.jpeg
                 let uniqueFileName: String = "\(ProcessInfo.processInfo.globallyUniqueString).jpeg"
-                
                 ImageFileManager.shared.saveImage(image: self.plantImage.image!, name: uniqueFileName) { value in
                     if value {
                         var waterPlan = ""
@@ -144,14 +144,12 @@ class RegisterViewController: UIViewController {
                         plantValue.plantImageName = uniqueFileName
                         PlantsRealm.shared.savePlant(plant: plantValue) { value in
                             if value {
-                                let items = PlantsRealm.shared.getPlants()
-                                HomeViewController().updateItemList(with: items)
+                                self.delegate?.reloadCollection()
                                 self.dismiss(animated: true)
                             }
                         }
                     }
                 }
-                
             } else {
                 self.present(ShowPopup.shared.alert(title: "알림", message: "반려 식물 이름, 사진, 물 주기를 입력해주세요."), animated: true, completion: nil)
             }

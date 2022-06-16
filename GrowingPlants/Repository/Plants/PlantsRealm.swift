@@ -17,11 +17,15 @@ class PlantsRealm {
         return (realm.objects(PlantsEntity.self).max(ofProperty: "id") as Int? ?? 0) + 1
     }
     
-    func getPlants() -> [PlantsEntity] {
+    func getPlants() -> [plantHashable] {
         do {
             let realm = try! Realm()
             let plantsList = realm.objects(PlantsEntity.self)
-            return Array(plantsList)
+            var plantHash: [plantHashable] = []
+            for item in plantsList {
+                plantHash.append(plantHashable(id: item.id, plantName: item.plantName, plantImageName: item.plantImageName, waterPlan: item.waterPlan))
+            }
+            return plantHash
         } catch {
             print("Error saveUsedHisotry \(error.localizedDescription)")
         }

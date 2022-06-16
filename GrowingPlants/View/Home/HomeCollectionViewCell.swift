@@ -14,7 +14,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var watherSchedule: UILabel!
     @IBOutlet var watherPlanLabels: [UILabel]!
     
-    func configure(plant : PlantsEntity) {
+    func configure(plant : plantHashable) {
         if let image: UIImage = ImageFileManager.shared.getSavedImage(named: plant.plantImageName) {
             plantImageView.image = image
         }
