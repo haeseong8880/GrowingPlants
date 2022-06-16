@@ -10,25 +10,64 @@ import RealmSwift
 
 class HomeViewController: UIViewController {
     
-    private var plants: [PlantsEntity] = []
+//    private var plants: [PlantsEntity] = []
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var registerButton: UIButton!
+    
+    typealias Item = PlantsEntity
+    enum Section {
+        case main
+    }
+    var dataSource: UICollectionViewDiffableDataSource<Section, Item>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("PATH => \(Realm.Configuration.defaultConfiguration.fileURL!)")
         let plantList = PlantsRealm.shared.getPlants()
-            plantList.forEach {
-                self.plants.append($0)
-            }
         
-        collectionView.dataSource = self
-        collectionView.delegate = self
+        dataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as? HomeCollectionViewCell else { return nil }
+            
+            cell.layer.borderWidth = 1
+            cell.layer.borderColor = UIColor.lightGray.cgColor
+            cell.layer.cornerRadius = 10
+            cell.configure(plant: plantList[indexPath.row])
+            
+            return cell
+        })
         
-        if let flowlayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowlayout.estimatedItemSize = .zero
-        }
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(plantList, toSection: .main)
+        dataSource.apply(snapshot)
+        
+        collectionView.collectionViewLayout = layout()
+        //        self.updateItemList(with: items)
+        //        self.changeButtonTitle()
+        
+        //        collectionView.dataSource = self
+        //        collectionView.delegate = self
+        //
+        //        if let flowlayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+        //            flowlayout.estimatedItemSize = .zero
+        //        }
+    }
+    
+    private func layout() -> UICollectionViewCompositionalLayout {
+        
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(400))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(400))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+        section.interGroupSpacing = 10
+        
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        return layout
     }
     
     private func buttonConfigure() {
@@ -41,23 +80,12 @@ class HomeViewController: UIViewController {
         let vc = storyboard.instantiateViewController(withIdentifier: "RegisterViewController") as! RegisterViewController
         present(vc, animated: true)
     }
-}
-
-extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return plants.count
-    }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        print(indexPath.item)
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as? HomeCollectionViewCell else { return UICollectionViewCell() }
-        print("celllll ====> \(plants[indexPath.item])")
-        cell.configure(plant: plants[indexPath.item])
-        
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width, height: 400)
+    func updateItemList(with list: [PlantsEntity]) {
+        let plantList = PlantsRealm.shared.getPlants()
+        var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(plantList, toSection: .main)
+        dataSource?.apply(snapshot)
     }
 }

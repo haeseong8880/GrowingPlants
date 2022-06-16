@@ -135,11 +135,8 @@ class RegisterViewController: UIViewController {
                     if value {
                         var waterPlan = ""
                         for (index, item) in self.weekList.enumerated() {
-                            if index == 0 {
-                                waterPlan = "\(item.tagNumber)"
-                            } else {
-                                waterPlan = "\(waterPlan),\(item.tagNumber)"
-                            }
+                            if index == 0 { waterPlan = "\(item.tagNumber)" }
+                            else { waterPlan = "\(waterPlan),\(item.tagNumber)" }
                         }
                         let plantValue = PlantsEntity()
                         plantValue.plantName = self.plantNameTextField.text!
@@ -147,6 +144,8 @@ class RegisterViewController: UIViewController {
                         plantValue.plantImageName = uniqueFileName
                         PlantsRealm.shared.savePlant(plant: plantValue) { value in
                             if value {
+                                let items = PlantsRealm.shared.getPlants()
+                                HomeViewController().updateItemList(with: items)
                                 self.dismiss(animated: true)
                             }
                         }
