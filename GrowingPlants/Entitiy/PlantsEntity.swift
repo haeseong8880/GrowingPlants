@@ -13,16 +13,17 @@ class PlantsEntity: Object {
     @Persisted var plantName: String = ""
     @Persisted var plantImageName: String = ""
     @Persisted var waterPlan: String = ""
-    
+    @Persisted var registerDate: String = ""
     // id 가 고유 값입니다.
     override static func primaryKey() -> String? {
         return "id"
     }
 }
 
-struct plantHashable: Hashable {
+struct PlantHashable: Hashable {
     let id: Int
     let plantName: String
     let plantImageName: String
     let waterPlan: String
+    let registerDate: String
 }

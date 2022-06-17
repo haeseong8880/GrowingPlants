@@ -125,6 +125,10 @@ class RegisterViewController: UIViewController {
         
         let yesAction = UIAlertAction(title: "네", style: .default) { [weak self] _ in
             guard let self = self else { return }
+            // 시뮬레이터 플랫폼 체크
+            if Platform.isSimulator {
+                self.plantImage.image = UIImage(named: "plant")
+            }
             if !self.plantNameTextField.text!.isEmpty && self.plantImage.image != nil && !self.weekList.isEmpty {
                 self.weekList.forEach { item in
                     self.localNotificaitionSetting(item)
@@ -142,6 +146,7 @@ class RegisterViewController: UIViewController {
                         plantValue.plantName = self.plantNameTextField.text!
                         plantValue.waterPlan = waterPlan
                         plantValue.plantImageName = uniqueFileName
+                        plantValue.registerDate = Date().DateToString()
                         PlantsRealm.shared.savePlant(plant: plantValue) { value in
                             if value {
                                 self.delegate?.reloadCollection()

@@ -14,12 +14,12 @@ protocol sendDataDelegate {
 
 class HomeViewController: UIViewController {
 
-    var plantList: [plantHashable] = []
+    var plantList: [PlantHashable] = []
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var registerButton: UIButton!
     
-    typealias Item = plantHashable
+    typealias Item = PlantHashable
     enum Section {
         case main
     }
@@ -27,23 +27,28 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationItem.title = "나의 반려식물"
         print("PATH => \(Realm.Configuration.defaultConfiguration.fileURL!)")
         
         self.plantList = PlantsRealm.shared.getPlants()
-        
+        self.cellConfigure()
+        self.reloadCollection()
+        self.collectionView.delegate = self
+        collectionView.collectionViewLayout = layout()
+    }
+    
+    private func cellConfigure() {
         dataSource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCollectionViewCell", for: indexPath) as? HomeCollectionViewCell else { return nil }
-            
             cell.layer.borderWidth = 1
             cell.layer.borderColor = UIColor.lightGray.cgColor
             cell.layer.cornerRadius = 10
-            cell.configure(plant: self.plantList[indexPath.item])
             
+            cell.delegate = self
+            cell.configure(plant: self.plantList[indexPath.item])
+
             return cell
         })
-        self.reloadCollection()
-        collectionView.collectionViewLayout = layout()
     }
     
     private func layout() -> UICollectionViewCompositionalLayout {
@@ -73,14 +78,6 @@ class HomeViewController: UIViewController {
         vc.delegate = self
         present(vc, animated: true)
     }
-    
-    func updateItemList() {
-        let plantList: [plantHashable] = PlantsRealm.shared.getPlants()
-        var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
-        snapshot.appendSections([.main])
-        snapshot.appendItems(plantList, toSection: .main)
-        dataSource?.apply(snapshot)
-    }
 }
 
 extension HomeViewController: sendDataDelegate {
@@ -90,5 +87,16 @@ extension HomeViewController: sendDataDelegate {
         snapshot.appendSections([.main])
         snapshot.appendItems(self.plantList, toSection: .main)
         dataSource.apply(snapshot)
+    }
+}
+
+extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "PlantEditing", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "PlantEditingViewController") as! PlantEditingViewController
+        
+        vc.plantInfo = plantList[indexPath.item]
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

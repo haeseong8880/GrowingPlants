@@ -17,13 +17,13 @@ class PlantsRealm {
         return (realm.objects(PlantsEntity.self).max(ofProperty: "id") as Int? ?? 0) + 1
     }
     
-    func getPlants() -> [plantHashable] {
+    func getPlants() -> [PlantHashable] {
         do {
             let realm = try! Realm()
             let plantsList = realm.objects(PlantsEntity.self)
-            var plantHash: [plantHashable] = []
+            var plantHash: [PlantHashable] = []
             for item in plantsList {
-                plantHash.append(plantHashable(id: item.id, plantName: item.plantName, plantImageName: item.plantImageName, waterPlan: item.waterPlan))
+                plantHash.append(PlantHashable(id: item.id, plantName: item.plantName, plantImageName: item.plantImageName, waterPlan: item.waterPlan, registerDate: item.registerDate))
             }
             return plantHash
         } catch {
@@ -43,20 +43,20 @@ class PlantsRealm {
             print("savePlant => \(error.localizedDescription)")
         }
     }
-    //
-    //        func deleteUsedHistory(history: UsedHistoryModel, onSuccess: @escaping ((Bool) -> Void)) {
-    //            do {
-    //                let realm = try! Realm()
-    //                guard let data = realm.objects(UsedHistoryModel.self).filter("id == %@", history.id).first else { return }
-    //                try realm.write {
-    //                    realm.delete(data)
-    //                }
-    //                onSuccess(true)
-    //            } catch {
-    //                print("deleteUsedHistory => \(error.localizedDescription)")
-    //            }
-    //        }
-    //
+    
+    func deletePlant(plantid: Int, onSuccess: @escaping ((Bool) -> Void)) {
+        do {
+            let realm = try Realm()
+            guard let data = realm.objects(PlantsEntity.self).filter("id == %@", plantid).first else { return }
+            try realm.write {
+                realm.delete(data)
+            }
+            onSuccess(true)
+        } catch {
+            print("deleteUsedHistory => \(error.localizedDescription)")
+        }
+    }
+    
     //        func updateHistory(history: UsedHistoryModel, updateData: String ,type: SwipeActionEnum, onSuccess: @escaping ((Bool) -> Void)) {
     //            do {
     //                let realm = try! Realm()
