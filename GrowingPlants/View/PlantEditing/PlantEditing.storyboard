@@ -93,51 +93,86 @@
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="OxF-f0-xca">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="OxF-f0-xca">
                                         <rect key="frame" x="5" y="380" width="384" height="50"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKC-eq-rsJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="55" height="50"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="월" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kln-QX-gGO">
-                                                <rect key="frame" x="55" y="0.0" width="54.5" height="50"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="화" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0KA-7B-dYD">
-                                                <rect key="frame" x="109.5" y="0.0" width="55" height="50"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZvM-Au-qNe">
-                                                <rect key="frame" x="164.5" y="0.0" width="55" height="50"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="목" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBu-2g-5mO">
-                                                <rect key="frame" x="219.5" y="0.0" width="55" height="50"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="금" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBh-yR-0s9">
-                                                <rect key="frame" x="274.5" y="0.0" width="54.5" height="50"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="토" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqq-va-h5Y">
-                                                <rect key="frame" x="329" y="0.0" width="55" height="50"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YIe-Or-hBb">
+                                                <rect key="frame" x="0.0" y="0.0" width="50.5" height="50"/>
+                                                <color key="tintColor" red="0.77647058820000003" green="0.82352941180000006" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="일">
+                                                    <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="watherPlanButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="XcV-lA-hO4"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gs8-hH-dqK">
+                                                <rect key="frame" x="55.5" y="0.0" width="50.5" height="50"/>
+                                                <color key="tintColor" red="0.77647058820000003" green="0.82352941180000006" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="월">
+                                                    <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="watherPlanButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="8BO-WP-fGO"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oYi-wG-tZK">
+                                                <rect key="frame" x="111" y="0.0" width="50.5" height="50"/>
+                                                <color key="tintColor" red="0.77647058820000003" green="0.82352941180000006" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="화">
+                                                    <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="watherPlanButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="KRD-1a-84O"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wda-Qh-mz7">
+                                                <rect key="frame" x="166.5" y="0.0" width="51" height="50"/>
+                                                <color key="tintColor" red="0.77647058820000003" green="0.82352941180000006" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="수">
+                                                    <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="watherPlanButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Pev-qF-rTa"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXk-dJ-eAG">
+                                                <rect key="frame" x="222.5" y="0.0" width="50.5" height="50"/>
+                                                <color key="tintColor" red="0.77647058820000003" green="0.82352941180000006" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="목">
+                                                    <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="watherPlanButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="LHl-Ad-CBR"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ac-mF-O10">
+                                                <rect key="frame" x="278" y="0.0" width="50.5" height="50"/>
+                                                <color key="tintColor" red="0.77647058820000003" green="0.82352941180000006" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="금">
+                                                    <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="watherPlanButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="TtC-h3-Qs1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDS-Cu-eXZ">
+                                                <rect key="frame" x="333.5" y="0.0" width="50.5" height="50"/>
+                                                <color key="tintColor" red="0.77647058820000003" green="0.82352941180000006" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="토">
+                                                    <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="watherPlanButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="qkU-Zq-CKm"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="8af-Hk-vvg"/>
@@ -201,13 +236,13 @@
                         <outlet property="titleEditingStackView" destination="xsC-NW-71k" id="loY-xE-G4U"/>
                         <outlet property="titleEditingTextField" destination="2O0-tp-pMg" id="Eq1-ni-Pq9"/>
                         <outlet property="titleStackView" destination="Izz-w3-HnD" id="Kcs-L4-IK0"/>
-                        <outletCollection property="watherPlanLabels" destination="dKC-eq-rsJ" collectionClass="NSMutableArray" id="b1N-x2-fW6"/>
-                        <outletCollection property="watherPlanLabels" destination="Kln-QX-gGO" collectionClass="NSMutableArray" id="Nyy-pW-SoS"/>
-                        <outletCollection property="watherPlanLabels" destination="0KA-7B-dYD" collectionClass="NSMutableArray" id="cWZ-oK-1wc"/>
-                        <outletCollection property="watherPlanLabels" destination="ZvM-Au-qNe" collectionClass="NSMutableArray" id="7W7-pu-QWj"/>
-                        <outletCollection property="watherPlanLabels" destination="eBu-2g-5mO" collectionClass="NSMutableArray" id="b2o-4J-UO3"/>
-                        <outletCollection property="watherPlanLabels" destination="SBh-yR-0s9" collectionClass="NSMutableArray" id="ppV-2S-Afz"/>
-                        <outletCollection property="watherPlanLabels" destination="lqq-va-h5Y" collectionClass="NSMutableArray" id="Atp-Kz-vBt"/>
+                        <outletCollection property="watherPlanButtons" destination="YIe-Or-hBb" collectionClass="NSMutableArray" id="20S-h6-aef"/>
+                        <outletCollection property="watherPlanButtons" destination="gs8-hH-dqK" collectionClass="NSMutableArray" id="BQg-5i-btE"/>
+                        <outletCollection property="watherPlanButtons" destination="oYi-wG-tZK" collectionClass="NSMutableArray" id="iNO-0d-U1B"/>
+                        <outletCollection property="watherPlanButtons" destination="Wda-Qh-mz7" collectionClass="NSMutableArray" id="2On-Xz-gvo"/>
+                        <outletCollection property="watherPlanButtons" destination="oXk-dJ-eAG" collectionClass="NSMutableArray" id="p9n-28-mcZ"/>
+                        <outletCollection property="watherPlanButtons" destination="5ac-mF-O10" collectionClass="NSMutableArray" id="qam-ti-sL0"/>
+                        <outletCollection property="watherPlanButtons" destination="bDS-Cu-eXZ" collectionClass="NSMutableArray" id="eSj-c2-djH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

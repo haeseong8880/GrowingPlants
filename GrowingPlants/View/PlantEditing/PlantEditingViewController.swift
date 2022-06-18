@@ -11,12 +11,13 @@ class PlantEditingViewController: UIViewController {
 
     var plantInfo: PlantHashable?
     var delegate: parentsPageRefresh?
+    var weekList: [Week] = []
     
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var plantName: UILabel!
     @IBOutlet weak var plantRegisterDate: UILabel!
     @IBOutlet weak var plantImage: UIImageView!
-    @IBOutlet var watherPlanLabels: [UILabel]!
+    @IBOutlet var watherPlanButtons: [UIButton]!
     
     // 수정에 필요한 것들
     @IBOutlet weak var titleStackView: UIStackView!
@@ -27,7 +28,9 @@ class PlantEditingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(plantInfo)
+        watherPlanButtons.forEach { item in
+            item.tintColor = #colorLiteral(red: 0.7764705882, green: 0.8235294118, blue: 0.7450980392, alpha: 1)
+        }
         self.configure()
         self.layerConfigure()
     }
@@ -41,9 +44,11 @@ class PlantEditingViewController: UIViewController {
         }
         let week = plant.waterPlan.components(separatedBy: ",")
         week.forEach {
-            watherPlanLabels[Int($0)! - 1].layer.cornerRadius = 10
-            watherPlanLabels[Int($0)! - 1].layer.backgroundColor = #colorLiteral(red: 0.8941176471, green: 0.7490196078, blue: 0.7019607843, alpha: 1)
+            weekList.append(Week(tagNumber: Int($0)! - 1, weekName: tagNumberChangeWeek(tagNumber: Int($0)! - 1)))
+            watherPlanButtons[Int($0)! - 1].layer.cornerRadius = 10
+            watherPlanButtons[Int($0)! - 1].tintColor = #colorLiteral(red: 0.8941176471, green: 0.7490196078, blue: 0.7019607843, alpha: 1)
         }
+        print(weekList)
     }
     
     private func layerConfigure() {
@@ -71,6 +76,7 @@ class PlantEditingViewController: UIViewController {
                             self.titleEditingStackView.isHidden = true
                             self.titleStackView.isHidden = false
                             self.titleEditingTextField.text = nil
+                            self.titleEditingTextField.placeholder = self.titleEditingTextField.text
                             self.delegate?.pageRefresh()
                         }
                     }
@@ -85,6 +91,25 @@ class PlantEditingViewController: UIViewController {
         }
     }
     
+    @IBAction func watherPlanButtonTapped(_ sender: UIButton) {
+        watherPlanButtons.forEach { item in
+            if item.tag == sender.tag {
+                if item.tintColor == #colorLiteral(red: 0.7764705882, green: 0.8235294118, blue: 0.7450980392, alpha: 1) {
+                    item.tintColor = #colorLiteral(red: 0.8941176471, green: 0.7490196078, blue: 0.7019607843, alpha: 1)
+                    guard let weekName = sender.titleLabel?.text else { return }
+                    weekList.append(Week(tagNumber: sender.tag, weekName: weekName))
+                } else {
+                    for (index, week) in weekList.enumerated() {
+                        if week.tagNumber == sender.tag {
+                            weekList.remove(at: index)
+                        }
+                    }
+                    item.tintColor = #colorLiteral(red: 0.7764705882, green: 0.8235294118, blue: 0.7450980392, alpha: 1)
+                }
+            }
+        }
+    }
+    
     @IBAction func editingButtonTapped(_ sender: UIButton) {
         print("aaaaaa")
     }
@@ -92,6 +117,16 @@ class PlantEditingViewController: UIViewController {
     // 키보드 닫음
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         self.view.endEditing(true)
+    }
+    
+    private func tagNumberChangeWeek(tagNumber: Int) -> String {
+        if tagNumber == 0 { return "일"}
+        else if tagNumber == 1 { return "월" }
+        else if tagNumber == 2 { return "화" }
+        else if tagNumber == 3 { return "수" }
+        else if tagNumber == 4 { return "목" }
+        else if tagNumber == 5 { return "금" }
+        else { return "토" }
     }
     
 }
