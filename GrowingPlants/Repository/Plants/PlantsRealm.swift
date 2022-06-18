@@ -57,14 +57,16 @@ class PlantsRealm {
         }
     }
     
-    //        func updateHistory(history: UsedHistoryModel, updateData: String ,type: SwipeActionEnum, onSuccess: @escaping ((Bool) -> Void)) {
-    //            do {
-    //                let realm = try! Realm()
-    //                guard let data = realm.objects(UsedHistoryModel.self).filter("id == %@", history.id).first else { return }
-    //                print(data)
-    //                onSuccess(true)
-    //            } catch {
-    //                print("updateMember => \(error.localizedDescription)")
-    //            }
-    //        }
+    func updatePlantName(plantid: Int, updateName: String, onSuccess: @escaping ((Bool) -> Void)) {
+        do {
+            let realm = try! Realm()
+            guard let data = realm.objects(PlantsEntity.self).filter("id == %@", plantid).first else { return }
+            try realm.write {
+                data.plantName = updateName
+            }
+            onSuccess(true)
+        } catch {
+            print("updateMember => \(error.localizedDescription)")
+        }
+    }
 }

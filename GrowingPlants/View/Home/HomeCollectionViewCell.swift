@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol parentsPageRefresh {
+    func pageRefresh()
+}
+
 class HomeCollectionViewCell: UICollectionViewCell {
     
     var plantId: Int?
@@ -58,8 +62,15 @@ class HomeCollectionViewCell: UICollectionViewCell {
         let storyboard = UIStoryboard(name: "PlantEditing", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "PlantEditingViewController") as! PlantEditingViewController
         
+        vc.delegate = self
         vc.plantInfo = palntInfo
         
         UIApplication.shared.keyWindow?.rootViewController?.present(vc, animated: true)
+    }
+}
+
+extension HomeCollectionViewCell: parentsPageRefresh {
+    func pageRefresh() {
+        self.delegate?.reloadCollection()
     }
 }
