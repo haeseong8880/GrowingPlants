@@ -13,11 +13,12 @@ protocol sendDataDelegate {
 }
 
 class HomeViewController: UIViewController {
-
+    
     var plantList: [PlantHashable] = []
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var plzRegisterPlant: UILabel!
     
     typealias Item = PlantHashable
     enum Section {
@@ -31,10 +32,21 @@ class HomeViewController: UIViewController {
         print("PATH => \(Realm.Configuration.defaultConfiguration.fileURL!)")
         
         self.plantList = PlantsRealm.shared.getPlants()
+        self.checkEmpty()
         self.cellConfigure()
         self.reloadCollection()
         self.collectionView.delegate = self
         collectionView.collectionViewLayout = layout()
+    }
+    
+    private func checkEmpty() {
+        if self.plantList.isEmpty {
+            plzRegisterPlant.isHidden = false
+            collectionView.isHidden = true
+        } else {
+            plzRegisterPlant.isHidden = true
+            collectionView.isHidden = false
+        }
     }
     
     private func cellConfigure() {
@@ -45,8 +57,9 @@ class HomeViewController: UIViewController {
             cell.layer.cornerRadius = 10
             
             cell.delegate = self
+            cell.palntInfo = self.plantList[indexPath.item]
             cell.configure(plant: self.plantList[indexPath.item])
-
+            
             return cell
         })
     }
@@ -83,6 +96,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController: sendDataDelegate {
     func reloadCollection() {
         self.plantList = PlantsRealm.shared.getPlants()
+        self.checkEmpty()
         var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
         snapshot.appendSections([.main])
         snapshot.appendItems(self.plantList, toSection: .main)
@@ -92,11 +106,6 @@ extension HomeViewController: sendDataDelegate {
 
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "PlantEditing", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "PlantEditingViewController") as! PlantEditingViewController
         
-        vc.plantInfo = plantList[indexPath.item]
-        
-        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

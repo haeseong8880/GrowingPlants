@@ -169,9 +169,9 @@
 		31E9645828508499008D2C52 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				317EF240285C61FC0029F3FF /* PlantEditing */,
 				31E96459285084A1008D2C52 /* Home */,
 				31E9649E2855B6DB008D2C52 /* Register */,
+				317EF240285C61FC0029F3FF /* PlantEditing */,
 			);
 			path = View;
 			sourceTree = "<group>";

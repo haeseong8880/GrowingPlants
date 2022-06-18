@@ -10,6 +10,7 @@ import UIKit
 class HomeCollectionViewCell: UICollectionViewCell {
     
     var plantId: Int?
+    var palntInfo: PlantHashable?
     var delegate: sendDataDelegate?
     
     @IBOutlet weak var plantImageView: UIImageView!
@@ -52,5 +53,13 @@ class HomeCollectionViewCell: UICollectionViewCell {
         alert.addAction(noAction)
         UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true)
         
+    }
+    @IBAction func editingButtonTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "PlantEditing", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "PlantEditingViewController") as! PlantEditingViewController
+        
+        vc.plantInfo = palntInfo
+        
+        UIApplication.shared.keyWindow?.rootViewController?.present(vc, animated: true)
     }
 }
