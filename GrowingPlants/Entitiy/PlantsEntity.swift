@@ -22,8 +22,8 @@ class PlantsEntity: Object {
 
 struct PlantHashable: Hashable {
     let id: Int
-    let plantName: String
+    var plantName: String
     let plantImageName: String
-    let waterPlan: String
+    var waterPlan: String
     let registerDate: String
 }

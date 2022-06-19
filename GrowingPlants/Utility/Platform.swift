@@ -11,7 +11,6 @@ import Foundation
 
 // 시뮬레이터 체크
 struct Platform {
-
     static var isSimulator: Bool {
         return TARGET_OS_SIMULATOR != 0
     }

@@ -57,12 +57,13 @@ class PlantsRealm {
         }
     }
     
-    func updatePlantName(plantid: Int, updateName: String, onSuccess: @escaping ((Bool) -> Void)) {
+    func updatePlantInfo(plantid: Int, plantInfo: PlantHashable, onSuccess: @escaping ((Bool) -> Void)) {
         do {
             let realm = try! Realm()
             guard let data = realm.objects(PlantsEntity.self).filter("id == %@", plantid).first else { return }
             try realm.write {
-                data.plantName = updateName
+                data.plantName = plantInfo.plantName
+                data.waterPlan = plantInfo.waterPlan
             }
             onSuccess(true)
         } catch {

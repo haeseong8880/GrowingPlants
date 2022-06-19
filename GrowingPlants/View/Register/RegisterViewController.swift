@@ -87,38 +87,6 @@ class RegisterViewController: UIViewController {
         }
     }
     
-    // Local Notificaion Setting
-    private func localNotificaitionSetting(_ week: Week) {
-        // 푸시에 표시 될 컨텐츠
-        let content = UNMutableNotificationContent()
-        content.title = "반려 식물에게 물을 주는 날입니다!"
-        content.body = "오늘은 \(week.weekName)요일 입니다."
-        
-        // 푸시 일정 주기
-        var dateComponents = DateComponents()
-        dateComponents.calendar = Calendar.current
-        
-        dateComponents.weekday = week.tagNumber
-        dateComponents.hour = 12
-        //        dateComponents.minute = 49
-        
-        // 트리거 생성
-        let trigger = UNCalendarNotificationTrigger(
-            dateMatching: dateComponents, repeats: true)
-        
-        // Create the request
-        let uuidString = UUID().uuidString
-        let request = UNNotificationRequest(identifier: uuidString,
-                                            content: content, trigger: trigger)
-        // Schedule the request with the system.
-        let notificationCenter = UNUserNotificationCenter.current()
-        notificationCenter.add(request) { (error) in
-            if error != nil {
-                // Handle any errors.
-            }
-        }
-    }
-    
     // 등록 버튼 누름
     @IBAction func plantRegisterTapped(_ sender: Any) {
         let alert = UIAlertController(title: nil, message: "반려 식물 물 주기를 등록하시겠습니까?", preferredStyle: .alert)
@@ -131,7 +99,7 @@ class RegisterViewController: UIViewController {
             }
             if !self.plantNameTextField.text!.isEmpty && self.plantImage.image != nil && !self.weekList.isEmpty {
                 self.weekList.forEach { item in
-                    self.localNotificaitionSetting(item)
+                    LocalNotificationUtility.shared.localNotificaitionSetting(week: item, plantName: self.plantNameTextField.text!)
                 }
                 // UniqueName.jpeg
                 let uniqueFileName: String = "\(ProcessInfo.processInfo.globallyUniqueString).jpeg"
@@ -142,6 +110,7 @@ class RegisterViewController: UIViewController {
                             if index == 0 { waterPlan = "\(item.tagNumber)" }
                             else { waterPlan = "\(waterPlan),\(item.tagNumber)" }
                         }
+                        print("=====> \(waterPlan)")
                         let plantValue = PlantsEntity()
                         plantValue.plantName = self.plantNameTextField.text!
                         plantValue.waterPlan = waterPlan

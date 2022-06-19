@@ -89,7 +89,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="KzH-Ze-swx">
                                 <rect key="frame" x="10" y="509" width="394" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2i-6E-HCj">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2i-6E-HCj">
                                         <rect key="frame" x="0.0" y="0.0" width="52" height="50"/>
                                         <color key="tintColor" red="0.77647058820000003" green="0.82352941180000006" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
@@ -100,7 +100,7 @@
                                             <action selector="weekTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="xWS-P3-KIY"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m95-Bi-MDY">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m95-Bi-MDY">
                                         <rect key="frame" x="57" y="0.0" width="52" height="50"/>
                                         <color key="tintColor" red="0.77647058820000003" green="0.82352941180000006" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
@@ -111,7 +111,7 @@
                                             <action selector="weekTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="mLf-ZF-8pe"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5Q-92-da3">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5Q-92-da3">
                                         <rect key="frame" x="114" y="0.0" width="52" height="50"/>
                                         <color key="tintColor" red="0.77647058820000003" green="0.82352941180000006" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
@@ -122,7 +122,7 @@
                                             <action selector="weekTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="4SV-Of-dre"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kqb-YE-fmd">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kqb-YE-fmd">
                                         <rect key="frame" x="171" y="0.0" width="52" height="50"/>
                                         <color key="tintColor" red="0.77647058820000003" green="0.82352941180000006" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
@@ -133,7 +133,7 @@
                                             <action selector="weekTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="rVt-Q4-fQC"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NCz-AD-VIy">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NCz-AD-VIy">
                                         <rect key="frame" x="228" y="0.0" width="52" height="50"/>
                                         <color key="tintColor" red="0.77647058820000003" green="0.82352941180000006" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
@@ -144,7 +144,7 @@
                                             <action selector="weekTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="acN-lg-RL5"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJG-d9-Om7">
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJG-d9-Om7">
                                         <rect key="frame" x="285" y="0.0" width="52" height="50"/>
                                         <color key="tintColor" red="0.77647058820000003" green="0.82352941180000006" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
@@ -155,7 +155,7 @@
                                             <action selector="weekTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="bY0-2y-bUF"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLp-rK-oo2">
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLp-rK-oo2">
                                         <rect key="frame" x="342" y="0.0" width="52" height="50"/>
                                         <color key="tintColor" red="0.77647058820000003" green="0.82352941180000006" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>

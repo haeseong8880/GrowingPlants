@@ -8,7 +8,7 @@
 import UIKit
 
 class PlantEditingViewController: UIViewController {
-
+    
     var plantInfo: PlantHashable?
     var delegate: parentsPageRefresh?
     var weekList: [Week] = []
@@ -43,10 +43,11 @@ class PlantEditingViewController: UIViewController {
             plantImage.image = image
         }
         let week = plant.waterPlan.components(separatedBy: ",")
+        print(week)
         week.forEach {
-            weekList.append(Week(tagNumber: Int($0)! - 1, weekName: tagNumberChangeWeek(tagNumber: Int($0)! - 1)))
-            watherPlanButtons[Int($0)! - 1].layer.cornerRadius = 10
-            watherPlanButtons[Int($0)! - 1].tintColor = #colorLiteral(red: 0.8941176471, green: 0.7490196078, blue: 0.7019607843, alpha: 1)
+            weekList.append(Week(tagNumber: Int($0)!, weekName: tagNumberChangeWeek(tagNumber: Int($0)!)))
+            watherPlanButtons[Int($0)!].layer.cornerRadius = 10
+            watherPlanButtons[Int($0)!].tintColor = #colorLiteral(red: 0.8941176471, green: 0.7490196078, blue: 0.7019607843, alpha: 1)
         }
         print(weekList)
     }
@@ -61,30 +62,17 @@ class PlantEditingViewController: UIViewController {
     
     @IBAction func titleEditingButtonTapped(_ sender: UIButton) {
         if sender.tag == 0 {
-            titleEditingStackView.isHidden = false
-            titleEditingTextField.placeholder = plantInfo?.plantName
-            titleStackView.isHidden = true
+            self.titleEditingStackView.isHidden = false
+            self.titleEditingTextField.placeholder = self.plantNameLabel.text
+            self.titleStackView.isHidden = true
         } else {
-            if self.titleEditingTextField.text != nil {
-                let alert = UIAlertController(title: nil, message: "반려 식물의 이름을 변경 하시겠습니까?", preferredStyle: .alert)
-                
-                let yesAction = UIAlertAction(title: "네", style: .default) { [weak self] _ in
-                    guard let self = self else { return }
-                    PlantsRealm.shared.updatePlantName(plantid: self.plantInfo!.id, updateName: self.titleEditingTextField.text!) {
-                        if $0 {
-                            self.plantNameLabel.text = self.titleEditingTextField.text
-                            self.titleEditingStackView.isHidden = true
-                            self.titleStackView.isHidden = false
-                            self.titleEditingTextField.text = nil
-                            self.titleEditingTextField.placeholder = self.titleEditingTextField.text
-                            self.delegate?.pageRefresh()
-                        }
-                    }
-                }
-                alert.addAction(yesAction)
-                let noAction = UIAlertAction(title: "아니오", style: .cancel) { _ in }
-                alert.addAction(noAction)
-                self.present(alert, animated: true)
+            if self.titleEditingTextField.text != nil && self.titleEditingTextField.text != "" {
+                self.titleEditingStackView.isHidden = true
+                self.titleStackView.isHidden = false
+                self.plantNameLabel.text = self.titleEditingTextField.text
+                self.titleEditingTextField.placeholder = self.plantNameLabel.text
+                self.titleEditingTextField.text = nil
+                self.delegate?.pageRefresh()
             } else {
                 self.present(ShowPopup.shared.alert(title: "알림", message: "반려 식물의 이름을 입력해주세요."), animated: true, completion: nil)
             }
@@ -109,9 +97,46 @@ class PlantEditingViewController: UIViewController {
             }
         }
     }
-    
     @IBAction func editingButtonTapped(_ sender: UIButton) {
-        print("aaaaaa")
+        if self.weekList.isEmpty {
+            self.present(ShowPopup.shared.alert(title: "알림", message: "반려 식물의 물 주기를 선택해주세요."), animated: true) 
+        }else {
+            let alert = UIAlertController(title: nil, message: "반려 식물의 정보를 변경 하시겠습니까?", preferredStyle: .alert)
+            
+            let yesAction = UIAlertAction(title: "네", style: .default) { [weak self] _ in
+                guard let self = self else { return }
+                var waterPlan = ""
+                for (index, item) in self.weekList.enumerated() {
+                    if index == 0 { waterPlan = "\(item.tagNumber)" }
+                    else { waterPlan = "\(waterPlan),\(item.tagNumber)" }
+                }
+                print(waterPlan)
+                print(self.weekList)
+                let center = UNUserNotificationCenter.current()
+                center.removeAllDeliveredNotifications()
+                
+                var plant: PlantHashable = self.plantInfo!
+                
+                plant.plantName = self.plantNameLabel.text!
+                plant.waterPlan = waterPlan
+                self.weekList.forEach { LocalNotificationUtility.shared.localNotificaitionSetting(week: $0, plantName: self.plantNameLabel.text!) }
+                PlantsRealm.shared.updatePlantInfo(plantid: self.plantInfo!.id, plantInfo: plant) {
+                    if $0 {
+                        self.plantNameLabel.text = self.titleEditingTextField.text
+                        self.titleEditingStackView.isHidden = true
+                        self.titleStackView.isHidden = false
+                        self.titleEditingTextField.text = nil
+                        self.titleEditingTextField.placeholder = self.titleEditingTextField.text
+                        self.delegate?.pageRefresh()
+                        self.dismiss(animated: true)
+                    }
+                }
+            }
+            alert.addAction(yesAction)
+            let noAction = UIAlertAction(title: "아니오", style: .cancel) { _ in }
+            alert.addAction(noAction)
+            self.present(alert, animated: true)
+        }
     }
     
     // 키보드 닫음

@@ -28,9 +28,14 @@ class HomeCollectionViewCell: UICollectionViewCell {
             plantImageView.image = image
         }
         let week = plant.waterPlan.components(separatedBy: ",")
+        watherPlanLabels.forEach {
+            $0.layer.backgroundColor = #colorLiteral(red: 0.7764705882, green: 0.8235294118, blue: 0.7450980392, alpha: 1)
+            $0.layer.cornerRadius = 10
+        }
+        print(week)
         week.forEach {
-            watherPlanLabels[Int($0)! - 1].layer.cornerRadius = 10
-            watherPlanLabels[Int($0)! - 1].layer.backgroundColor = #colorLiteral(red: 0.8941176471, green: 0.7490196078, blue: 0.7019607843, alpha: 1)
+            watherPlanLabels[Int($0)!].layer.cornerRadius = 10
+            watherPlanLabels[Int($0)!].layer.backgroundColor = #colorLiteral(red: 0.8941176471, green: 0.7490196078, blue: 0.7019607843, alpha: 1)
         }
         dateLabel.text = plant.registerDate
         plantNameLabel.text = plant.plantName

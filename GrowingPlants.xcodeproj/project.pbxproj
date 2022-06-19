@@ -30,6 +30,7 @@
 		31E964AB28570D5E008D2C52 /* PlantsRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E964AA28570D5E008D2C52 /* PlantsRealm.swift */; };
 		31E964B32857167B008D2C52 /* WeekEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E964B22857167B008D2C52 /* WeekEntity.swift */; };
 		31E964B528572D9B008D2C52 /* ShowPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E964B428572D9B008D2C52 /* ShowPopup.swift */; };
+		31F93835285EF6220023D973 /* LocalNotificationUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F93834285EF6220023D973 /* LocalNotificationUtility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		31E964AA28570D5E008D2C52 /* PlantsRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsRealm.swift; sourceTree = "<group>"; };
 		31E964B22857167B008D2C52 /* WeekEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekEntity.swift; sourceTree = "<group>"; };
 		31E964B428572D9B008D2C52 /* ShowPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPopup.swift; sourceTree = "<group>"; };
+		31F93834285EF6220023D973 /* LocalNotificationUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationUtility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +220,7 @@
 				31C595862859BEDA007F9D37 /* ImageFileManager.swift */,
 				317EF23C285C4A270029F3FF /* Platform.swift */,
 				317EF23E285C4D7F0029F3FF /* Extension.swift */,
+				31F93834285EF6220023D973 /* LocalNotificationUtility.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				317EF23D285C4A270029F3FF /* Platform.swift in Sources */,
 				317EF244285C62450029F3FF /* PlantEditingViewController.swift in Sources */,
 				31E9645D28508CFD008D2C52 /* HomeViewController.swift in Sources */,
+				31F93835285EF6220023D973 /* LocalNotificationUtility.swift in Sources */,
 				317EF23F285C4D7F0029F3FF /* Extension.swift in Sources */,
 				31E964A22855B6FA008D2C52 /* RegisterViewController.swift in Sources */,
 				31C595872859BEDA007F9D37 /* ImageFileManager.swift in Sources */,
