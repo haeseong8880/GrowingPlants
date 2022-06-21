@@ -11,7 +11,9 @@
 		317EF23F285C4D7F0029F3FF /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317EF23E285C4D7F0029F3FF /* Extension.swift */; };
 		317EF242285C62240029F3FF /* PlantEditing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 317EF241285C62240029F3FF /* PlantEditing.storyboard */; };
 		317EF244285C62450029F3FF /* PlantEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317EF243285C62450029F3FF /* PlantEditingViewController.swift */; };
-		31C595852859BA87007F9D37 /* PlantsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C595842859BA87007F9D37 /* PlantsEntity.swift */; };
+		31A4271A2861A04400FD0138 /* PlantsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A427192861A04400FD0138 /* PlantsEntity.swift */; };
+		31A4271C2861A07700FD0138 /* DiaryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A4271B2861A07700FD0138 /* DiaryEntity.swift */; };
+		31C595852859BA87007F9D37 /* PlantHashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C595842859BA87007F9D37 /* PlantHashable.swift */; };
 		31C595872859BEDA007F9D37 /* ImageFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C595862859BEDA007F9D37 /* ImageFileManager.swift */; };
 		31C595892859C866007F9D37 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C595882859C866007F9D37 /* HomeCollectionViewCell.swift */; };
 		31E9642928508488008D2C52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E9642828508488008D2C52 /* AppDelegate.swift */; };
@@ -59,7 +61,9 @@
 		317EF23E285C4D7F0029F3FF /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		317EF241285C62240029F3FF /* PlantEditing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlantEditing.storyboard; sourceTree = "<group>"; };
 		317EF243285C62450029F3FF /* PlantEditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantEditingViewController.swift; sourceTree = "<group>"; };
-		31C595842859BA87007F9D37 /* PlantsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsEntity.swift; sourceTree = "<group>"; };
+		31A427192861A04400FD0138 /* PlantsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsEntity.swift; sourceTree = "<group>"; };
+		31A4271B2861A07700FD0138 /* DiaryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEntity.swift; sourceTree = "<group>"; };
+		31C595842859BA87007F9D37 /* PlantHashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantHashable.swift; sourceTree = "<group>"; };
 		31C595862859BEDA007F9D37 /* ImageFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFileManager.swift; sourceTree = "<group>"; };
 		31C595882859C866007F9D37 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		31E9642528508488008D2C52 /* GrowingPlants.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrowingPlants.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +125,14 @@
 				317EF243285C62450029F3FF /* PlantEditingViewController.swift */,
 			);
 			path = PlantEditing;
+			sourceTree = "<group>";
+		};
+		31A427182861A01E00FD0138 /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				31A4271B2861A07700FD0138 /* DiaryEntity.swift */,
+			);
+			path = Diary;
 			sourceTree = "<group>";
 		};
 		31E9641C28508488008D2C52 = {
@@ -211,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				31E964A928570D3D008D2C52 /* Plants */,
+				31A427182861A01E00FD0138 /* Diary */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -219,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				31E964AA28570D5E008D2C52 /* PlantsRealm.swift */,
+				31A427192861A04400FD0138 /* PlantsEntity.swift */,
 			);
 			path = Plants;
 			sourceTree = "<group>";
@@ -239,7 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				31E964B22857167B008D2C52 /* WeekEntity.swift */,
-				31C595842859BA87007F9D37 /* PlantsEntity.swift */,
+				31C595842859BA87007F9D37 /* PlantHashable.swift */,
 			);
 			path = Entitiy;
 			sourceTree = "<group>";
@@ -408,7 +422,7 @@
 				31E9642928508488008D2C52 /* AppDelegate.swift in Sources */,
 				31E9642B28508488008D2C52 /* SceneDelegate.swift in Sources */,
 				31E964AB28570D5E008D2C52 /* PlantsRealm.swift in Sources */,
-				31C595852859BA87007F9D37 /* PlantsEntity.swift in Sources */,
+				31C595852859BA87007F9D37 /* PlantHashable.swift in Sources */,
 				31C595892859C866007F9D37 /* HomeCollectionViewCell.swift in Sources */,
 				317EF23D285C4A270029F3FF /* Platform.swift in Sources */,
 				317EF244285C62450029F3FF /* PlantEditingViewController.swift in Sources */,
@@ -416,7 +430,9 @@
 				31F93835285EF6220023D973 /* LocalNotificationUtility.swift in Sources */,
 				317EF23F285C4D7F0029F3FF /* Extension.swift in Sources */,
 				31F9383F285F0C740023D973 /* RegisterDiaryViewController.swift in Sources */,
+				31A4271A2861A04400FD0138 /* PlantsEntity.swift in Sources */,
 				31E964A22855B6FA008D2C52 /* RegisterViewController.swift in Sources */,
+				31A4271C2861A07700FD0138 /* DiaryEntity.swift in Sources */,
 				31C595872859BEDA007F9D37 /* ImageFileManager.swift in Sources */,
 				31E964B32857167B008D2C52 /* WeekEntity.swift in Sources */,
 				31F9383A285F05F80023D973 /* MyPlantDiaryViewController.swift in Sources */,

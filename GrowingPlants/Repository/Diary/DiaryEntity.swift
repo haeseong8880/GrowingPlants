@@ -1,14 +1,14 @@
 //
-//  PlantsEntity.swift
+//  DiaryEntity.swift
 //  GrowingPlants
 //
-//  Created by haeseongJung on 2022/06/15.
+//  Created by haeseongJung on 2022/06/21.
 //
 
 import Foundation
 import RealmSwift
 
-class PlantsEntity: Object {
+class DiaryEntity: Object {
     @Persisted var id: Int = 0
     @Persisted var plantName: String = ""
     @Persisted var plantImageName: String = ""
@@ -18,12 +18,4 @@ class PlantsEntity: Object {
     override static func primaryKey() -> String? {
         return "id"
     }
-}
-
-struct PlantHashable: Hashable {
-    let id: Int
-    var plantName: String
-    let plantImageName: String
-    var waterPlan: String
-    let registerDate: String
 }
