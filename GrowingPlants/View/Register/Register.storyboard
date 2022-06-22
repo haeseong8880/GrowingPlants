@@ -52,7 +52,7 @@
                                                 <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Uf-VK-44T">
-                                                <rect key="frame" x="25" y="0.0" width="344" height="225"/>
+                                                <rect key="frame" x="146.5" y="76" width="101" height="73.5"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" imagePadding="0.0">
@@ -66,14 +66,12 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="8Uf-VK-44T" firstAttribute="centerY" secondItem="B8y-E1-cf7" secondAttribute="centerY" id="0co-Ma-Lxq"/>
                                             <constraint firstAttribute="trailing" secondItem="XLj-vj-w8Q" secondAttribute="trailing" constant="25" id="DgE-q6-nhe"/>
-                                            <constraint firstItem="8Uf-VK-44T" firstAttribute="top" secondItem="B8y-E1-cf7" secondAttribute="top" id="G8w-RY-3h1"/>
-                                            <constraint firstAttribute="bottom" secondItem="8Uf-VK-44T" secondAttribute="bottom" id="GDc-xg-cEC"/>
                                             <constraint firstAttribute="width" secondItem="B8y-E1-cf7" secondAttribute="height" multiplier="7:4" id="R4A-jd-7Tz"/>
-                                            <constraint firstAttribute="trailing" secondItem="8Uf-VK-44T" secondAttribute="trailing" constant="25" id="aX5-Dn-bOT"/>
+                                            <constraint firstItem="8Uf-VK-44T" firstAttribute="centerX" secondItem="B8y-E1-cf7" secondAttribute="centerX" id="Sfi-6S-lVn"/>
                                             <constraint firstAttribute="bottom" secondItem="XLj-vj-w8Q" secondAttribute="bottom" id="p3B-o0-SPm"/>
                                             <constraint firstItem="XLj-vj-w8Q" firstAttribute="leading" secondItem="B8y-E1-cf7" secondAttribute="leading" constant="25" id="wEU-h0-Hsm"/>
-                                            <constraint firstItem="8Uf-VK-44T" firstAttribute="leading" secondItem="B8y-E1-cf7" secondAttribute="leading" constant="25" id="wMm-Q1-kgG"/>
                                             <constraint firstItem="XLj-vj-w8Q" firstAttribute="top" secondItem="B8y-E1-cf7" secondAttribute="top" id="yA6-ZO-KAI"/>
                                         </constraints>
                                     </view>

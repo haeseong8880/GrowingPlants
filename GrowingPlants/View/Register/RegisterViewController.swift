@@ -39,7 +39,8 @@ class RegisterViewController: UIViewController {
         
         let yesAction = UIAlertAction(title: "네", style: .default) { [weak self] _ in
             guard let self = self else { return }
-            self.cameraEvent()
+            let camera = self.cameraEvent()
+            self.present(camera, animated: true, completion: nil)
         }
         alert.addAction(yesAction)
         let noAction = UIAlertAction(title: "아니오", style: .cancel) { _ in }
@@ -53,18 +54,19 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func cameraTapped(_ sender: Any) {
-        cameraEvent()
+        let camera = self.cameraEvent()
+        self.present(camera, animated: true, completion: nil)
     }
     
     // camera event
-    private func cameraEvent() {
+    private func cameraEvent() ->UIImagePickerController {
         let camera = UIImagePickerController()
         camera.sourceType = .camera
         camera.allowsEditing = true
         camera.cameraDevice = .rear
         camera.cameraCaptureMode = .photo
         camera.delegate = self
-        present(camera, animated: true, completion: nil)
+        return camera
     }
     
     // 주기 선택 버튼 클릭!
@@ -102,7 +104,7 @@ class RegisterViewController: UIViewController {
                     LocalNotificationUtility.shared.localNotificaitionSetting(week: item, plantName: self.plantNameTextField.text!)
                 }
                 // UniqueName.jpeg
-                let uniqueFileName: String = "\(ProcessInfo.processInfo.globallyUniqueString).jpeg"
+                let uniqueFileName: String = Utility.shared.makeImageName()
                 ImageFileManager.shared.saveImage(image: self.plantImage.image!, name: uniqueFileName) { value in
                     if value {
                         var waterPlan = ""
@@ -110,7 +112,6 @@ class RegisterViewController: UIViewController {
                             if index == 0 { waterPlan = "\(item.tagNumber)" }
                             else { waterPlan = "\(waterPlan),\(item.tagNumber)" }
                         }
-                        print("=====> \(waterPlan)")
                         let plantValue = PlantsEntity()
                         plantValue.plantName = self.plantNameTextField.text!
                         plantValue.waterPlan = waterPlan
@@ -147,7 +148,6 @@ extension RegisterViewController: UIImagePickerControllerDelegate & UINavigation
         
         if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
             plantImage.image = image
-            print(info)
         }
         plantImage.isHidden = false
         cameraButton.isHidden = true

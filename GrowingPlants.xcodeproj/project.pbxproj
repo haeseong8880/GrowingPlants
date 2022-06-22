@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		313418312863591000BB01A5 /* MyPlantDiaryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313418302863591000BB01A5 /* MyPlantDiaryCollectionViewCell.swift */; };
+		31480E742862EA26003A301B /* Utitliy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31480E732862EA26003A301B /* Utitliy.swift */; };
 		317EF23D285C4A270029F3FF /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317EF23C285C4A270029F3FF /* Platform.swift */; };
 		317EF23F285C4D7F0029F3FF /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317EF23E285C4D7F0029F3FF /* Extension.swift */; };
 		317EF242285C62240029F3FF /* PlantEditing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 317EF241285C62240029F3FF /* PlantEditing.storyboard */; };
 		317EF244285C62450029F3FF /* PlantEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317EF243285C62450029F3FF /* PlantEditingViewController.swift */; };
 		31A4271A2861A04400FD0138 /* PlantsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A427192861A04400FD0138 /* PlantsEntity.swift */; };
 		31A4271C2861A07700FD0138 /* DiaryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A4271B2861A07700FD0138 /* DiaryEntity.swift */; };
+		31A4271E2862E8E900FD0138 /* DiaryRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A4271D2862E8E900FD0138 /* DiaryRealm.swift */; };
 		31C595852859BA87007F9D37 /* PlantHashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C595842859BA87007F9D37 /* PlantHashable.swift */; };
 		31C595872859BEDA007F9D37 /* ImageFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C595862859BEDA007F9D37 /* ImageFileManager.swift */; };
 		31C595892859C866007F9D37 /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C595882859C866007F9D37 /* HomeCollectionViewCell.swift */; };
@@ -57,12 +60,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		313418302863591000BB01A5 /* MyPlantDiaryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantDiaryCollectionViewCell.swift; sourceTree = "<group>"; };
+		31480E732862EA26003A301B /* Utitliy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utitliy.swift; sourceTree = "<group>"; };
 		317EF23C285C4A270029F3FF /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		317EF23E285C4D7F0029F3FF /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		317EF241285C62240029F3FF /* PlantEditing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlantEditing.storyboard; sourceTree = "<group>"; };
 		317EF243285C62450029F3FF /* PlantEditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantEditingViewController.swift; sourceTree = "<group>"; };
 		31A427192861A04400FD0138 /* PlantsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantsEntity.swift; sourceTree = "<group>"; };
 		31A4271B2861A07700FD0138 /* DiaryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEntity.swift; sourceTree = "<group>"; };
+		31A4271D2862E8E900FD0138 /* DiaryRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryRealm.swift; sourceTree = "<group>"; };
 		31C595842859BA87007F9D37 /* PlantHashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantHashable.swift; sourceTree = "<group>"; };
 		31C595862859BEDA007F9D37 /* ImageFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFileManager.swift; sourceTree = "<group>"; };
 		31C595882859C866007F9D37 /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -130,6 +136,7 @@
 		31A427182861A01E00FD0138 /* Diary */ = {
 			isa = PBXGroup;
 			children = (
+				31A4271D2862E8E900FD0138 /* DiaryRealm.swift */,
 				31A4271B2861A07700FD0138 /* DiaryEntity.swift */,
 			);
 			path = Diary;
@@ -245,6 +252,7 @@
 				317EF23C285C4A270029F3FF /* Platform.swift */,
 				317EF23E285C4D7F0029F3FF /* Extension.swift */,
 				31F93834285EF6220023D973 /* LocalNotificationUtility.swift */,
+				31480E732862EA26003A301B /* Utitliy.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -263,6 +271,7 @@
 			children = (
 				31F93837285F05E70023D973 /* MyPlantDiary.storyboard */,
 				31F93839285F05F80023D973 /* MyPlantDiaryViewController.swift */,
+				313418302863591000BB01A5 /* MyPlantDiaryCollectionViewCell.swift */,
 			);
 			path = MyPlantDiary;
 			sourceTree = "<group>";
@@ -428,13 +437,16 @@
 				317EF244285C62450029F3FF /* PlantEditingViewController.swift in Sources */,
 				31E9645D28508CFD008D2C52 /* HomeViewController.swift in Sources */,
 				31F93835285EF6220023D973 /* LocalNotificationUtility.swift in Sources */,
+				313418312863591000BB01A5 /* MyPlantDiaryCollectionViewCell.swift in Sources */,
 				317EF23F285C4D7F0029F3FF /* Extension.swift in Sources */,
 				31F9383F285F0C740023D973 /* RegisterDiaryViewController.swift in Sources */,
+				31480E742862EA26003A301B /* Utitliy.swift in Sources */,
 				31A4271A2861A04400FD0138 /* PlantsEntity.swift in Sources */,
 				31E964A22855B6FA008D2C52 /* RegisterViewController.swift in Sources */,
 				31A4271C2861A07700FD0138 /* DiaryEntity.swift in Sources */,
 				31C595872859BEDA007F9D37 /* ImageFileManager.swift in Sources */,
 				31E964B32857167B008D2C52 /* WeekEntity.swift in Sources */,
+				31A4271E2862E8E900FD0138 /* DiaryRealm.swift in Sources */,
 				31F9383A285F05F80023D973 /* MyPlantDiaryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

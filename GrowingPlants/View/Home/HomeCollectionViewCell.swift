@@ -14,7 +14,7 @@ protocol parentsPageRefresh {
 class HomeCollectionViewCell: UICollectionViewCell {
     
     var plantId: Int?
-    var palntInfo: PlantHashable?
+    var plantInfo: PlantHashable?
     var delegate: sendDataDelegate?
     
     @IBOutlet weak var plantImageView: UIImageView!
@@ -68,7 +68,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
         let vc = storyboard.instantiateViewController(withIdentifier: "PlantEditingViewController") as! PlantEditingViewController
         
         vc.delegate = self
-        vc.plantInfo = palntInfo
+        vc.plantInfo = plantInfo
         
         UIApplication.shared.keyWindow?.rootViewController?.present(vc, animated: true)
     }

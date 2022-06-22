@@ -28,7 +28,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "나의 반려식물"
+        self.navigationItem.title = "나의 반려식물 🪴"
         print("PATH => \(Realm.Configuration.defaultConfiguration.fileURL!)")
         
         self.plantList = PlantsRealm.shared.getPlants()
@@ -57,7 +57,7 @@ class HomeViewController: UIViewController {
             cell.layer.cornerRadius = 10
             
             cell.delegate = self
-            cell.palntInfo = self.plantList[indexPath.item]
+            cell.plantInfo = self.plantList[indexPath.item]
             cell.configure(plant: self.plantList[indexPath.item])
             
             return cell
@@ -108,7 +108,7 @@ extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "MyPlantDiary", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "MyPlantDiaryViewController") as! MyPlantDiaryViewController
-        vc.palntInfo = self.plantList[indexPath.item]
+        vc.planInfo = self.plantList[indexPath.item]
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

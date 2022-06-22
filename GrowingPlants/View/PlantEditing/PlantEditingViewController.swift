@@ -43,7 +43,6 @@ class PlantEditingViewController: UIViewController {
             plantImage.image = image
         }
         let week = plant.waterPlan.components(separatedBy: ",")
-        print(week)
         week.forEach {
             weekList.append(Week(tagNumber: Int($0)!, weekName: tagNumberChangeWeek(tagNumber: Int($0)!)))
             watherPlanButtons[Int($0)!].layer.cornerRadius = 10
@@ -110,8 +109,6 @@ class PlantEditingViewController: UIViewController {
                     if index == 0 { waterPlan = "\(item.tagNumber)" }
                     else { waterPlan = "\(waterPlan),\(item.tagNumber)" }
                 }
-                print(waterPlan)
-                print(self.weekList)
                 let center = UNUserNotificationCenter.current()
                 center.removeAllDeliveredNotifications()
                 
