@@ -26,7 +26,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ga0-RD-eMw">
-                                <rect key="frame" x="10" y="140" width="394" height="616"/>
+                                <rect key="frame" x="10" y="140" width="394" height="722"/>
                                 <color key="backgroundColor" red="0.88235294117647056" green="0.94509803921568625" blue="0.90588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="s3u-Y7-H7v">
                                     <size key="itemSize" width="414" height="434"/>
@@ -213,13 +213,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.88235294117647056" green="0.94509803921568625" blue="0.90588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Ga0-RD-eMw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="39g-cK-Gta"/>
+                            <constraint firstItem="Ga0-RD-eMw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="AOc-7J-HGG"/>
                             <constraint firstItem="ocj-Hm-j74" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-25" id="EDc-XT-S2T"/>
-                            <constraint firstItem="Ga0-RD-eMw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-10" id="Kht-fJ-hX8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ga0-RD-eMw" secondAttribute="trailing" constant="10" id="FZG-VO-ga5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ga0-RD-eMw" secondAttribute="bottom" id="GDl-qw-jgc"/>
+                            <constraint firstItem="Ga0-RD-eMw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="KhJ-Um-ZAv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ocj-Hm-j74" secondAttribute="bottom" constant="40" id="NQj-I4-gk5"/>
-                            <constraint firstItem="Ga0-RD-eMw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="SWK-nQ-ccW"/>
-                            <constraint firstItem="Zlf-KS-Y7K" firstAttribute="centerX" secondItem="Ga0-RD-eMw" secondAttribute="centerX" id="ll9-Pk-Zos"/>
-                            <constraint firstItem="Ga0-RD-eMw" firstAttribute="centerY" secondItem="Zlf-KS-Y7K" secondAttribute="centerY" id="tsv-Nl-cgR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MtQ-Pl-zTT"/>
