@@ -31,7 +31,6 @@ class HomeViewController: UIViewController {
         self.navigationItem.title = "나의 반려식물 🪴"
         print("PATH => \(Realm.Configuration.defaultConfiguration.fileURL!)")
         
-        self.plantList = PlantsRealm.shared.getPlants()
         self.checkEmpty()
         self.cellConfigure()
         self.reloadCollection()

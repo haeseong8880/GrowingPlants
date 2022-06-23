@@ -7,9 +7,6 @@
 
 import Foundation
 
-
-
-
 struct PlantHashable: Hashable {
     let id: Int
     var plantName: String

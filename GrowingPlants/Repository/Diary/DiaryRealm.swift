@@ -14,22 +14,22 @@ class DiaryRealm {
     
     private func autoIncrementID() -> Int {
         let realm = try! Realm()
-        return (realm.objects(PlantsEntity.self).max(ofProperty: "id") as Int? ?? 0) + 1
+        return (realm.objects(DiaryEntity.self).max(ofProperty: "id") as Int? ?? 0) + 1
     }
-//
-//    func getPlants() -> [PlantHashable] {
-//        do {
-//            let realm = try! Realm()
-//            let plantsList = realm.objects(PlantsEntity.self)
-//            var plantHash: [PlantHashable] = []
-//            for item in plantsList {
-//                plantHash.append(PlantHashable(id: item.id, plantName: item.plantName, plantImageName: item.plantImageName, waterPlan: item.waterPlan, registerDate: item.registerDate))
-//            }
-//            return plantHash
-//        } catch {
-//            print("Error saveUsedHisotry \(error.localizedDescription)")
-//        }
-//    }
+
+    func getPlants(reference: Int) -> [DiaryHashable] {
+        do {
+            let realm = try! Realm()
+            let plantsList = realm.objects(DiaryEntity.self).filter("referenceNumber == \(reference)")
+            var diaryHash: [DiaryHashable] = []
+            for item in plantsList {
+                diaryHash.append(DiaryHashable(id: item.id, referenceNumber: item.referenceNumber, diaryImageName: item.diaryImageName, diaryContents: item.diaryContents, registerDate: item.registerDate))
+            }
+            return diaryHash.reversed()
+        } catch {
+            print("Error saveUsedHisotry \(error.localizedDescription)")
+        }
+    }
 
     func savePlant(diary: DiaryEntity, onSuccess: @escaping ((Bool) -> Void)) {
         do {

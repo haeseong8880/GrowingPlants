@@ -10,6 +10,7 @@ import UIKit
 class RegisterDiaryViewController: UIViewController {
     
     var reference: Int?
+    var delegate: sendDataDelegate?
     
     @IBOutlet weak var diaryTitleTextField: UITextField!
     @IBOutlet weak var diaryDate: UILabel!
@@ -72,7 +73,8 @@ class RegisterDiaryViewController: UIViewController {
                         diary.referenceNumber = self.reference!
                         DiaryRealm.shared.savePlant(diary: diary) {
                             if $0 {
-                                print("aaaaa")
+                                self.delegate?.reloadCollection()
+                                self.dismiss(animated: true)
                             }
                         }
                     }
