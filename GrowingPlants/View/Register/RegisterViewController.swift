@@ -31,7 +31,6 @@ class RegisterViewController: UIViewController {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         imageBackgroundView.isUserInteractionEnabled = true
         imageBackgroundView.addGestureRecognizer(tapGestureRecognizer)
-        
     }
     
     @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
@@ -39,7 +38,8 @@ class RegisterViewController: UIViewController {
         
         let yesAction = UIAlertAction(title: "네", style: .default) { [weak self] _ in
             guard let self = self else { return }
-            let camera = self.cameraEvent()
+            let camera = Utility.shared.cameraEvent()
+            camera.delegate = self
             self.present(camera, animated: true, completion: nil)
         }
         alert.addAction(yesAction)
@@ -54,20 +54,21 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func cameraTapped(_ sender: Any) {
-        let camera = self.cameraEvent()
+        let camera = Utility.shared.cameraEvent()
+        camera.delegate = self
         self.present(camera, animated: true, completion: nil)
     }
-    
-    // camera event
-    private func cameraEvent() ->UIImagePickerController {
-        let camera = UIImagePickerController()
-        camera.sourceType = .camera
-        camera.allowsEditing = true
-        camera.cameraDevice = .rear
-        camera.cameraCaptureMode = .photo
-        camera.delegate = self
-        return camera
-    }
+//
+//    // camera event
+//    private func cameraEvent() ->UIImagePickerController {
+//        let camera = UIImagePickerController()
+//        camera.sourceType = .camera
+//        camera.allowsEditing = true
+//        camera.cameraDevice = .rear
+//        camera.cameraCaptureMode = .photo
+//        camera.delegate = self
+//        return camera
+//    }
     
     // 주기 선택 버튼 클릭!
     @IBAction func weekTapped(_ sender: UIButton) {
