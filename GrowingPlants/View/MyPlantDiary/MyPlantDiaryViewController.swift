@@ -11,7 +11,10 @@ class MyPlantDiaryViewController: UIViewController {
     
     var planInfo: PlantHashable?
     var diaryList: [DiaryHashable] = []
+    var keyboardNotification: Bool = false
+    
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var notiLabel: UILabel!
     
     typealias Item = DiaryHashable
     enum Section {
@@ -21,12 +24,46 @@ class MyPlantDiaryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.navigationItem.title = "\(planInfo?.plantName ?? "")의 반려식물 일기"
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         
         self.cellConfigure()
         self.reloadCollection()
         self.collectionView.collectionViewLayout = layout()
+        
+        if self.diaryList.count > 0 {
+            collectionView.isHidden = false
+            notiLabel.isHidden = true
+        } else {
+            collectionView.isHidden = true
+            notiLabel.isHidden = false
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // 키보드 관련
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func keyboardWillAppear(notification: Notification){
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            UIView.animate(withDuration: 0.33) {
+                self.view.transform = CGAffineTransform(translationX: 0, y: -keyboardRectangle.height + 50)
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: Notification){
+        self.view.transform = .identity
     }
     
     private func cellConfigure() {
@@ -36,6 +73,9 @@ class MyPlantDiaryViewController: UIViewController {
             cell.layer.borderColor = UIColor.lightGray.cgColor
             cell.layer.cornerRadius = 10
             
+            cell.index = indexPath.item
+            cell.plantId = self.planInfo?.id
+            cell.delegate = self
             cell.configure(diary: self.diaryList[indexPath.item])
             return cell
         })
@@ -68,6 +108,8 @@ class MyPlantDiaryViewController: UIViewController {
 
 extension MyPlantDiaryViewController: sendDataDelegate {
     func reloadCollection() {
+        self.collectionView.isHidden = false
+        self.notiLabel.isHidden = true
         guard let reference = planInfo?.id else { return }
         self.diaryList = DiaryRealm.shared.getPlants(reference: reference)
         var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()

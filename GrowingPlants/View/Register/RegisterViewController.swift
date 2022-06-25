@@ -101,11 +101,11 @@ class RegisterViewController: UIViewController {
                 self.plantImage.image = UIImage(named: "plant")
             }
             if !self.plantNameTextField.text!.isEmpty && self.plantImage.image != nil && !self.weekList.isEmpty {
-                self.weekList.forEach { item in
-                    LocalNotificationUtility.shared.localNotificaitionSetting(week: item, plantName: self.plantNameTextField.text!)
-                }
                 // UniqueName.jpeg
                 let uniqueFileName: String = Utility.shared.makeImageName()
+                self.weekList.forEach { item in
+                    LocalNotificationUtility.shared.localNotificaitionSetting(week: item, plantName: self.plantNameTextField.text!, imageName: uniqueFileName)
+                }
                 ImageFileManager.shared.saveImage(image: self.plantImage.image!, name: uniqueFileName) { value in
                     if value {
                         var waterPlan = ""

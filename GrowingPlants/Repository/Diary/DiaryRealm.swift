@@ -57,31 +57,42 @@ class DiaryRealm {
         }
     }
     
-    //    func deletePlant(plantid: Int, onSuccess: @escaping ((Bool) -> Void)) {
-    //        do {
-    //            let realm = try Realm()
-    //            guard let data = realm.objects(PlantsEntity.self).filter("id == %@", plantid).first else { return }
-    //            try realm.write {
-    //                realm.delete(data)
-    //            }
-    //            onSuccess(true)
-    //        } catch {
-    //            print("deleteUsedHistory => \(error.localizedDescription)")
-    //        }
-    //    }
-    //
-    //    func updatePlantInfo(plantid: Int, plantInfo: PlantHashable, onSuccess: @escaping ((Bool) -> Void)) {
-    //        do {
-    //            let realm = try! Realm()
-    //            guard let data = realm.objects(PlantsEntity.self).filter("id == %@", plantid).first else { return }
-    //            try realm.write {
-    //                data.plantName = plantInfo.plantName
-    //                data.waterPlan = plantInfo.waterPlan
-    //            }
-    //            onSuccess(true)
-    //        } catch {
-    //            print("updateMember => \(error.localizedDescription)")
-    //        }
-    //    }
+    func dirayContentUpdate(diaryId: Int, updateContent: String, onSuccess: @escaping((Bool) -> Void)) {
+        do {
+            let realm = try Realm()
+            guard let data = realm.objects(DiaryEntity.self).filter("id == %@", diaryId).first else { return }
+            try realm.write{
+                data.diaryContents = updateContent
+            }
+            onSuccess(true)
+        } catch {
+            print("dirayContentUpdate => \(error.localizedDescription)")
+        }
+    }
     
+    func deleteDiary(diaryId: Int, plantId: Int ,onSuccess: @escaping ((Bool) -> Void)) {
+        do {
+            let realm = try Realm()
+            guard let data = realm.objects(DiaryEntity.self).filter("id == %@ && referenceNumber == %@", diaryId, plantId).first else { return }
+            try realm.write {
+                realm.delete(data)
+            }
+            onSuccess(true)
+        } catch {
+            print("deleteUsedHistory => \(error.localizedDescription)")
+        }
+    }
+    
+    func parentsDelete(plantId: Int, onSuccess: @escaping((Bool) -> Void)) {
+        do {
+            let realm = try Realm()
+            let data = realm.objects(DiaryEntity.self).filter("referenceNumber == %@", plantId)
+            try realm.write {
+                realm.delete(data)
+            }
+            onSuccess(true)
+        } catch {
+            print("parentsDelete => \(error.localizedDescription)")
+        }
+    }
 }

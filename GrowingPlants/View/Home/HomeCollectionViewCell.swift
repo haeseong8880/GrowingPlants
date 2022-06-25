@@ -49,12 +49,26 @@ class HomeCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func trashTapped(_ sender: Any) {
-        let alert = UIAlertController(title: nil, message: "반려 식물 물 주기를 등록하시겠습니까?", preferredStyle: .alert)
+        let alert = UIAlertController(title: nil, message: "반려식물을 삭제하시겠습니까?", preferredStyle: .alert)
         
         let yesAction = UIAlertAction(title: "네", style: .default) { [weak self] _ in
             guard let self = self else { return }
             PlantsRealm.shared.deletePlant(plantid: self.plantId!) {
-                if $0 { self.delegate?.reloadCollection() }
+                if $0 {
+                    DiaryRealm.shared.parentsDelete(plantId: self.plantId!) { [self] result in
+                        if result {
+                            var notificationName:[String] = []
+                            let week = self.plantInfo!.waterPlan.components(separatedBy: ",")
+                            week.forEach {
+                                notificationName.append("\(self.plantInfo?.plantImageName)_\($0)")
+                            }
+                            print("notificationName ====>>> \(notificationName)")
+                            UNUserNotificationCenter.current().removeDeliveredNotifications(withIdentifiers:
+                             notificationName)
+                            self.delegate?.reloadCollection()
+                        }
+                    }
+                }
             }
         }
         alert.addAction(yesAction)

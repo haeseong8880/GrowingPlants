@@ -10,12 +10,16 @@ import UIKit
 class MyPlantDiaryCollectionViewCell: UICollectionViewCell {
     
     var diaryInfo: DiaryHashable?
+    var plantId: Int?
     var editingButtonCheck: Bool = false
+    var index: Int?
+    var delegate: sendDataDelegate?
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var diaryImageView: UIImageView!
     @IBOutlet weak var diaryTextField: UITextField!
     @IBOutlet weak var editingButton: UIButton!
+    @IBOutlet weak var editingDoneButton: UIButton!
     
     func configure(diary: DiaryHashable) {
         self.imageConfigure()
@@ -36,8 +40,7 @@ class MyPlantDiaryCollectionViewCell: UICollectionViewCell {
         diaryImageView.layer.cornerRadius = 10
     }
     
-    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
-    {
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
         let tappedImage = tapGestureRecognizer.view as! UIImageView
         // Your action
         let alert = UIAlertController(title: nil, message: "다시 재 촬영을 하시겠습니까??", preferredStyle: .alert)
@@ -53,17 +56,56 @@ class MyPlantDiaryCollectionViewCell: UICollectionViewCell {
         UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true)
     }
     
+    // 작업 할 부분
     @IBAction func editingButtonTapped(_ sender: UIButton) {
-        print("aaaaaaaa")
-        if editingButtonCheck {
-            print("bbbbbbb")
-            sender.setImage(UIImage(named: "doc.append.fill"), for: .normal)
+        if sender.tag == 0 {
+            self.diaryTextField.isUserInteractionEnabled = !self.diaryTextField.isUserInteractionEnabled
+            self.diaryTextField.becomeFirstResponder()
+            //            NotificationCenter.default.post(name: UIResponder.keyboardWillShowNotification, object: nil, userInfo: ["index":index])
+            self.editingButton.isHidden = true
+            self.editingDoneButton.isHidden = false
         } else {
-            print("cccccccc")
-            sender.setImage(UIImage.init(named: "pencil.tip"), for: .normal)
+            if diaryTextField.text != nil && diaryTextField.text != "" {
+                let alert = UIAlertController(title: nil, message: "한줄 일기를 수정 하시겠습니까?", preferredStyle: .alert)
+                
+                let yesAction = UIAlertAction(title: "네", style: .default) { [weak self] _ in
+                    guard let self = self else { return }
+                    DiaryRealm.shared.dirayContentUpdate(diaryId: self.diaryInfo!.id, updateContent: self.diaryTextField.text!) {
+                        if $0 {
+                            self.editingButton.isHidden = false
+                            self.editingDoneButton.isHidden = true
+                            self.delegate?.reloadCollection()
+                            self.diaryTextField.isUserInteractionEnabled = !self.diaryTextField.isUserInteractionEnabled
+                        }
+                    }
+                }
+                alert.addAction(yesAction)
+                let noAction = UIAlertAction(title: "아니오", style: .cancel) { _ in }
+                alert.addAction(noAction)
+                UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true)
+            } else {
+                UIApplication.shared.keyWindow?.rootViewController?.present(ShowPopup.shared.alert(title: "알림", message: "한줄 일기를 입력해주세요."), animated: true)
+            }
         }
-       
-        self.editingButtonCheck = !self.editingButtonCheck
+    }
+    @IBAction func trashButtonTapped(_ sender: UIButton) {
+        let alert = UIAlertController(title: nil, message: "한줄 일기를 삭제 하시겠습니까?", preferredStyle: .alert)
+        
+        let yesAction = UIAlertAction(title: "네", style: .default) { [weak self] _ in
+            guard let self = self else { return }
+            DiaryRealm.shared.deleteDiary(diaryId: self.diaryInfo!.id, plantId: self.plantId!) {
+                if $0 { self.delegate?.reloadCollection() }
+            }
+        }
+        alert.addAction(yesAction)
+        let noAction = UIAlertAction(title: "아니오", style: .cancel) { _ in }
+        alert.addAction(noAction)
+        UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true)
+    }
+    
+    // 키보드 닫음
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        UIApplication.shared.keyWindow?.rootViewController?.view.endEditing(true)
     }
 }
 

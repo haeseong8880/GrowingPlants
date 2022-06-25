@@ -116,7 +116,10 @@ class PlantEditingViewController: UIViewController {
                 
                 plant.plantName = self.plantNameLabel.text!
                 plant.waterPlan = waterPlan
-                self.weekList.forEach { LocalNotificationUtility.shared.localNotificaitionSetting(week: $0, plantName: self.plantNameLabel.text!) }
+                self.weekList.forEach {
+                    LocalNotificationUtility.shared.localNotificaitionSetting(week: $0, plantName: self.plantNameLabel.text!, imageName: plant.plantImageName)
+                    
+                }
                 PlantsRealm.shared.updatePlantInfo(plantid: self.plantInfo!.id, plantInfo: plant) {
                     if $0 {
                         self.plantNameLabel.text = self.titleEditingTextField.text
