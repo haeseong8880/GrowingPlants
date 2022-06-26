@@ -126,6 +126,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		312DC556286818D90067962C /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				31E964332850848A008D2C52 /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
 		317EF240285C61FC0029F3FF /* PlantEditing */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +175,7 @@
 		31E9642728508488008D2C52 /* GrowingPlants */ = {
 			isa = PBXGroup;
 			children = (
+				312DC556286818D90067962C /* LaunchScreen */,
 				31E964B128571673008D2C52 /* Entitiy */,
 				31E964A828570D36008D2C52 /* Repository */,
 				31E9645828508499008D2C52 /* View */,
@@ -174,7 +183,6 @@
 				31E9642828508488008D2C52 /* AppDelegate.swift */,
 				31E9642A28508488008D2C52 /* SceneDelegate.swift */,
 				31E964312850848A008D2C52 /* Assets.xcassets */,
-				31E964332850848A008D2C52 /* LaunchScreen.storyboard */,
 				31E964362850848A008D2C52 /* Info.plist */,
 			);
 			path = GrowingPlants;
